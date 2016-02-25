@@ -5,3 +5,5 @@ def post_list(request):
 
 def post_count(request):
     return render(request, 'einc/count.html', {})
+def post_countksk(request):
+    return render(request, 'einc/countksk.html', {})
