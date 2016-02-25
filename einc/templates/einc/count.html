@@ -125,7 +125,7 @@
 	                          <tr>
 	                            <td class="nameLabel"><b>Тип полиса</b></td>
 	                            <td>
-	                              <select name="policyType" onChange="changeAutoOsago(this);" >
+	                              <select name="policyType"  >
 	                                <!--  -->
 	                                <option value="0" 
 	                                         >
@@ -149,20 +149,20 @@
 	                                <input class="input" 
 	                                       type="text" name="regionName" readonly 
 	                                       value="Москва и Московская область" ><input class="button" type="button" value="..." 
-					                                                                      onClick="showDct(this, '/system/modules/reso.site/elements/calculation/controllerAuto.jsp', 'viewOSAGORegions' );" >
+					                                                                       >
                         														       
 	                              </div>
 	                            </td>
 	                          </tr>
                                   
                                   <tr>
-                                    <td class="nameLabel"><b><a href="" onClick="return openNoteWindow( this, cTitleAutoOsagoTerritory, cNoteAutoOsagoTerritory );">Территория</a></b> <span class="mandatory">*</span></td>
+                                    <td class="nameLabel"><b><a href="" >Территория</a></b> <span class="mandatory">*</span></td>
                                     <td>                                                                            
                                       <div class="dct">
                                         <input class="input" 
                                                type="text" name="territoryName" readonly 
                                                value="Москва"><input class="button" type="button" value="..." 
-                                                                                                                                                                   onClick="showOsagoTerritoryDct( this, '/system/modules/reso.site/elements/calculation/controllerOsago.jsp');">
+                                                                                                                                                                   >
                                       </div>
                                     </td>
                                   </tr> 
@@ -178,7 +178,7 @@
                                   <tr>
                                     <td class="nameLabel"><b>Категория</b> <span class="mandatory">*</span></td>
                                     <td> 
-                                      <div class="dct"><input class="input" type="text" name="categoryName" readonly value="Легковые автомобили"><input class="button" type="button" value="..." onClick="showCarCategoryDct( this, '/system/modules/reso.site/elements/calculation/controllerOsago.jsp' );"></div> 
+                                      <div class="dct"><input class="input" type="text" name="categoryName" readonly value="Легковые автомобили"><input class="button" type="button" value="..." ></div> 
                                     </td>
                                   </tr> 
                                   <tr>
@@ -228,12 +228,12 @@
                                   </tr>
                                   <tr>
                                     <td colspan=2>
-                                      <div class="field"><input class="radio_check" type="radio" name="driverList" value=0  onClick="checkAutoOsagoDriverUnlim( this );" ><label><a href="" onClick="return openNoteWindow( this, cTitleAutoOsagoDriverList, cNoteAutoOsagoDriverList );" >Без ограничений</a></label></div>
-                                      <div class="field"><input class="radio_check" type="radio" name="driverList" value=1 checked onClick="checkAutoOsagoDriverUnlim( this );" ><label>Ограниченный список</label></div> 
+                                      <div class="field"><input class="radio_check" type="radio" name="driverList" value=0   >Без ограничений</a></label></div>
+                                      <div class="field"><input class="radio_check" type="radio" name="driverList" value=1  ><label>Ограниченный список</label></div> 
                                     </td>
                                   </tr> 
                                   <tr>
-                                    <td class="nameLabel"><b><a href="" onClick="return openNoteWindow( this, cTitleAutoOsagoBonusMalus, cNoteAutoOsagoBonusMalus, 620, 650 );">Класс бонуса-малуса</a></b></td>
+                                    <td class="nameLabel"><b><a href="" >Класс бонуса-малуса</a></b></td>
                                     <td> 
                                       <select name="kbm">
                                         <option value="-1"  >М</option>
@@ -255,7 +255,7 @@
                                     </td>
                                   </tr> 
                                   <tr>
-                                    <td colspan=2><b><a href="" onClick="return openNoteWindow( this, cTitleAutoOsagoDriverAgeStage, cNoteAutoOsagoDriverAgeStage );">Возраст и водительский стаж</a></b></td>
+                                    <td colspan=2><b><a href="" >Возраст и водительский стаж</a></b></td>
                                   </tr> 
                                   <tr>
                                     <td colspan=2> 
@@ -279,7 +279,6 @@
                                       </select>
                                     </td>
                                   </tr> 
-                                  <!-- В связи с зависимостью премии по ДГО от возраста ТС --> 
                                   <tr>
                                     <td class="nameLabel"><b>Год выпуска ТС</b></td>
                                     <td> 
@@ -296,7 +295,7 @@
                                     </td>
 					
                                     <td class="bottom">
-                                      <input class="btn btn-primary" type="submit" value="Рассчитать" name="calculation" onClick="return checkAutoOsagoCalc( this, 'calcAutoOsago' );">  
+                                      <input class="btn btn-primary" type="submit" value="Рассчитать" name="calculation">  
                                     </td>
                                   </tr>
 
