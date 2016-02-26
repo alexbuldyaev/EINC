@@ -80,8 +80,8 @@
             <br/><br/>
             <h3>
             
-            Hope you enjoy this snipppet, for  more go to <br><br>
-            Special Thanks to Bootsnipp
+            Ознакомьтесь с нашими предложениями<br><br>
+            
             </h3>
             <br/><br/>
             </div>
@@ -93,8 +93,8 @@
                 <div class="db-wrapper">
                     <div class="db-pricing-eleven db-bk-color-one">
                         <div class="price">
-                            <sup>$</sup>99
-                                <small>per quarter</small>
+                            <sup>Р</sup>1900
+                                <small>год</small>
                         </div>
                         <div class="type">
                             Росгосстрах
@@ -124,13 +124,13 @@
                     </div>
                     <ul>
 
-                        <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
-                        <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
-                        <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                        <li><i class="glyphicon glyphicon-print"></i>Покрытие А </li>
+                        <li><i class="glyphicon glyphicon-time"></i>Опция Б </li>
+                        <li><i class="glyphicon glyphicon-trash"></i>Покрытие Б</li>
                     </ul>
                     <div class="pricing-footer">
 
-                        <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                        <a href="#" class="btn db-button-color-square btn-lg">Положить в корзину</a>
                     </div>
                 </div>
                       </div>
@@ -153,7 +153,7 @@
                     </ul>
                     <div class="pricing-footer">
 
-                        <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                        <a href="#" class="btn db-button-color-square btn-lg">Положить в корзину</a>
                     </div>
                 </div>
                       </div>
@@ -176,7 +176,7 @@
                     </ul>
                     <div class="pricing-footer">
 
-                        <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                        <a href="#" class="btn db-button-color-square btn-lg">Положить в корзину</a>
                     </div>
                 </div>
                       </div>
