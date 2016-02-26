@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {%load staticfiles%}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>E-INC insurance</title>
+
+    <link  rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}" type = 'text/css'/>
+
+
+    <link href="{%static 'css/ie10-viewport-bug-workaround.css'%}" rel="stylesheet">
+    <script src="{%static 'js/ie-emulation-modes-warning.js'%}"></script>
+
+    <link  rel="stylesheet" href="{%static 'css/show.css' %}" type = 'text/css'/>
+    <link  rel="stylesheet" href="{%static 'css/carusel.css' %}" type = 'text/css'/>
+  </head>
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+  <body>
+    <hr class="featurette-divider">
+
+
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">E-INS</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contact">Контакты</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Акция "Выгодная весна"</a></li>
+                    <li><a href="#">Акция1</a></li>
+                    <li><a href="#">Акция2</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Separated link</a></li>
+                    <li><a href="/signin">Войти в ЛК</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div> 
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Выбирать<span class="text-muted">Лучшее</span></h2>
+          <p class="lead">Выберите лучшее предложение прямо сейчас!</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="/static/img/18.jpg" alt="Generic placeholder image">
+        </div>
+      </div>
+<div class="container">
+   <div class="row text-center">
+            <div class="col-md-12">
+            <br/><br/>
+            <h3>
+            
+            Hope you enjoy this snipppet, for  more go to <br><br>
+            Special Thanks to Bootsnipp
+            </h3>
+            <br/><br/>
+            </div>
+    </div> 
+<!---------------------------------------------------------------------------------------------------------------------------------------->       
+           
+  <div class="row db-padding-btm db-attached">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <div class="db-wrapper">
+                    <div class="db-pricing-eleven db-bk-color-one">
+                        <div class="price">
+                            <sup>$</sup>99
+                                <small>per quarter</small>
+                        </div>
+                        <div class="type">
+                            Росгосстрах
+                        </div>
+                        <ul>
+
+                            <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
+                            <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
+                            <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                        </ul>
+                        <div class="pricing-footer">
+
+                            <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                  <div class="db-wrapper">
+                <div class="db-pricing-eleven db-bk-color-two popular">
+                    <div class="price">
+                        <sup>P</sup>2050
+                                <small>год</small>
+                    </div>
+                    <div class="type">
+                        Альфа
+                    </div>
+                    <ul>
+
+                        <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
+                        <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
+                        <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                    </ul>
+                    <div class="pricing-footer">
+
+                        <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                    </div>
+                </div>
+                      </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                  <div class="db-wrapper">
+                <div class="db-pricing-eleven db-bk-color-three">
+                    <div class="price">
+                        <sup>P</sup>2100
+                                <small>год</small>
+                    </div>
+                    <div class="type">
+                        Ресо-Гарантия
+                    </div>
+                    <ul>
+
+                        <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
+                        <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
+                        <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                    </ul>
+                    <div class="pricing-footer">
+
+                        <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                    </div>
+                </div>
+                      </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                  <div class="db-wrapper">
+                <div class="db-pricing-eleven db-bk-color-six">
+                    <div class="price">
+                        <sup>P</sup>2500
+                                <small>год</small>
+                    </div>
+                    <div class="type">
+                        Ингосстрах
+                    </div>
+                    <ul>
+
+                        <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
+                        <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
+                        <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                    </ul>
+                    <div class="pricing-footer">
+
+                        <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                    </div>
+                </div>
+                      </div>
+            </div>
+        </div>
+        
+
+    </div>
+      <hr class="featurette-divider">
+
+</body> 
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+
+ 
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; E-INS company &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+</html>
+

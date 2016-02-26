@@ -226,12 +226,14 @@
                               </tr> 
 
 
-                              <tr>
-                                <td class="nameLabel"></td>
-                                <td class="bottom">
-                                  <input class="button" type="submit" value="Рассчитать" name="calculation" >  
-                                </td>
-                              </tr>
+                             <tr>
+                                    <td class="nameLabel">
+                                    </td>
+					
+                                    <td class="bottom">
+                                      <input class="btn btn-primary" type="submit" value="Рассчитать" name="calculation">  
+                                    </td>
+                             </tr>
                              <tr><td class="nameHr" colspan=2></td></tr>
        	                      <tr>
                                 <td class="nameLabel"><b>Стоимость полиса</b></td>
