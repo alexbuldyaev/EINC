@@ -1,14 +1,4 @@
-/*=============================================================
-    Authour URL: www.designbootstrap.com
-    
-    http://www.designbootstrap.com/
 
-    License: MIT     
-========================================================  */
-
-/*============================================================
-BACKGROUND COLORS
-============================================================*/
 .db-bk-color-one {
     background-color: #f55039;
 }
@@ -24,9 +14,7 @@ BACKGROUND COLORS
 .db-bk-color-six {
     background-color: #F59B24;
 }
-/*============================================================
-PRICING STYLES
-==========================================================*/
+
 .db-padding-btm {
     padding-bottom: 50px;
 }
@@ -89,10 +77,9 @@ PRICING STYLES
         }
 
     .db-pricing-eleven .type {
-        background-color: #52E89E;
+        background-color: #808080;
         padding: 50px 20px;
         font-weight: 900;
-        text-transform: uppercase;
         font-size: 30px;
     }
 

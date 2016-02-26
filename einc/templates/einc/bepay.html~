@@ -77,12 +77,9 @@
 <div class="container">
    <div class="row text-center">
             <div class="col-md-12">
-            <br/><br/>
-            <h3>
+
             
-            Ознакомьтесь с нашими предложениями<br><br>
-            
-            </h3>
+
             <br/><br/>
             </div>
     </div> 
@@ -97,6 +94,7 @@
                                 <small>год</small>
                         </div>
                         <div class="type">
+				<img src = "/static/img/01.jpg" width="200" height="150">
                             Росгосстрах
                         </div>
                         <ul>
