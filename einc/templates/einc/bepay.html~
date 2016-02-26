@@ -66,11 +66,11 @@
     </div> 
 <!-------------------------------------------------------------------------------------------------------------------------------------------->
       <div class="row featurette">
-        <div class="col-md-7 col-md-push-5">
+        <div class="col-md-6 col-md-push-5">
           <h2 class="featurette-heading">Выбирать<span class="text-muted">Лучшее</span></h2>
           <p class="lead">Выберите лучшее предложение прямо сейчас!</p>
         </div>
-        <div class="col-md-5 col-md-pull-7">
+        <div class="col-md-3 col-md-pull-5">
           <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="/static/img/18.jpg" alt="Generic placeholder image">
         </div>
       </div>
@@ -101,13 +101,12 @@
                         </div>
                         <ul>
 
-                            <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
-                            <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
-                            <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                            <li><i class="glyphicon glyphicon-print"></i>Покрытие А </li>
+
                         </ul>
                         <div class="pricing-footer">
 
-                            <a href="#" class="btn db-button-color-square btn-lg">BOOK ORDER</a>
+                            <a href="#" class="btn db-button-color-square btn-lg">Положить в корзину</a>
                         </div>
                     </div>
                 </div>
@@ -147,9 +146,9 @@
                     </div>
                     <ul>
 
-                        <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
-                        <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
-                        <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                        <li><i class="glyphicon glyphicon-print"></i>Покрытие А </li>
+                        <li><i class="glyphicon glyphicon-time"></i>Сервис Б</li>
+                        <li><i class="glyphicon glyphicon-trash"></i>Уход С</li>
                     </ul>
                     <div class="pricing-footer">
 
@@ -170,9 +169,9 @@
                     </div>
                     <ul>
 
-                        <li><i class="glyphicon glyphicon-print"></i>30+ Accounts </li>
-                        <li><i class="glyphicon glyphicon-time"></i>150+ Projects </li>
-                        <li><i class="glyphicon glyphicon-trash"></i>Lead Required</li>
+                        <li><i class="glyphicon glyphicon-print"></i>АВАРКОМ </li>
+                        <li><i class="glyphicon glyphicon-time"></i>Делюкс покрытие</li>
+
                     </ul>
                     <div class="pricing-footer">
 

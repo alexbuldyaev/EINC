@@ -632,12 +632,13 @@
                          
 
                           <tr>
-                            <td class="nameLabel"></td>
-                            <td class="bottom">
-                              <input class="button" type="submit" value="Рассчитать"
-                                     name="calculation" onClick="return checkAutoCalc( this );">
-                            </td>
-                          </tr>
+                                    <td class="nameLabel">
+                                    </td>
+					
+                                    <td class="bottom">
+                                      <input class="btn btn-primary" type="submit" value="Рассчитать" name="calculation">  
+                                    </td>
+                                  </tr>
 
                           <tr><td class="nameHr" colspan=2></td></tr>
 
