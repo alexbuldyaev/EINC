@@ -42,14 +42,13 @@
                 <li><a href="#about">О нас</a></li>
                 <li><a href="#contact">Контакты</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Для меня <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Акция "Выгодная весна"</a></li>
-                    <li><a href="#">Акция1</a></li>
-                    <li><a href="#">Акция2</a></li>
+                    <li><a href="#">Мои расчеты</a></li>
+
                     <li role="separator" class="divider"></li>
                     <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
+                    <li><a href="#">Зарегестрироваться</a></li>
                     <li><a href="/signin">Войти в ЛК</a></li>
                   </ul>
                 </li>
@@ -61,7 +60,7 @@
       </div>
     </div>
 
-
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->

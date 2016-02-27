@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^counthom/', views.post_counthom, name='post_counthom'),
     url(r'^signin/', views.post_signin, name='post_signin'),
     url(r'^bepay/', views.post_bepay, name='post_bepay'),
+    url(r'^contact/', views.post_contact, name='post_contact'),
 
 ]

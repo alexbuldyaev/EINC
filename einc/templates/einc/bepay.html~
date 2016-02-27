@@ -95,7 +95,6 @@
                         </div>
                         <div class="type">
 				<img src = "/static/img/01.jpg" width="200" height="150">
-                            Росгосстрах
                         </div>
                         <ul>
 
@@ -117,7 +116,7 @@
                                 <small>год</small>
                     </div>
                     <div class="type">
-                        Альфа
+                        <img src = "/static/img/02.jpg" width="200" height="150">
                     </div>
                     <ul>
 
@@ -140,7 +139,7 @@
                                 <small>год</small>
                     </div>
                     <div class="type">
-                        Ресо-Гарантия
+                        <img src = "/static/img/03.jpg" width="200" height="150">
                     </div>
                     <ul>
 
@@ -163,7 +162,7 @@
                                 <small>год</small>
                     </div>
                     <div class="type">
-                        Ингосстрах
+                        <img src = "/static/img/04.jpg" width="200" height="150">
                     </div>
                     <ul>
 
@@ -192,5 +191,8 @@
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; E-INS company &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
+<script type="text/javascript" script src="/static/js/main.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" script src="/static/js/bootstrap.min.js"></script>
 </html>
 

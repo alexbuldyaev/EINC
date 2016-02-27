@@ -30,8 +30,7 @@
   </head>
 <!--NAVBAR
 ================================================== -->
-<div class = "container">
-
+  <body>
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -48,19 +47,18 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="/">Home</a></li>
                 <li><a href="#about">О нас</a></li>
-                <li><a href="#contact">Контакты</a></li>
+                <li><a href="contact">Контакты</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Для меня <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="#">Акция "Выгодная весна"</a></li>
-                    <li><a href="#">Акция1</a></li>
-                    <li><a href="#">Акция2</a></li>
+                    <li><a href="#">Мои расчеты</a></li>
+
                     <li role="separator" class="divider"></li>
                     <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
+                    <li><a href="#">Зарегестрироваться</a></li>
+                    <li><a href="/signin">Войти в ЛК</a></li>
                   </ul>
                 </li>
               </ul>
@@ -247,10 +245,7 @@
                                 <td class="nameLabel"><b>Стоимость полиса</b></td>
                                 <td id="housePremium">&nbsp;</td>
                               </tr>
-                             <a href = "/bepay">
-  			     <button type="button" class="btn btn-primary">Выбрать компанию</button>
-
-			     </a>
+                             
        	                      <tr>
        	                        <td colspan=2 class="colspan">
                                   <div id="error" class="error"></div>
@@ -287,3 +282,8 @@
         <p>&copy; E-INS company &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 </body>
+
+<script type="text/javascript" script src="/static/js/main.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" script src="/static/js/bootstrap.min.js"></script>
+</html>

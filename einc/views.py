@@ -15,5 +15,7 @@ def post_signin(request):
     return render(request, 'einc/signin.html', {})
 def post_bepay(request):
     return render(request, 'einc/bepay.html', {})
+def post_contact(request):
+    return render(request, 'einc/contact.html', {})
 
 

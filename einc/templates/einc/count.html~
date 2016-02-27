@@ -297,11 +297,16 @@
                                     <td class="bottom">
                                       <input class="btn btn-primary" type="submit" value="Рассчитать" name="calculation">  
                                     </td>
+                             <td>
+                             <a href = "/bepay">
+  			     <button type="button" class="btn btn-primary">Выбрать компанию</button>
+
+			     </a>
+                             </td>
                                   </tr>
 
                                   <tr>
-                                    <td class="bottom">
-                                    </td>
+                                    
                                    
                                   </tr>
 
@@ -356,3 +361,8 @@
         <p>&copy; E-INS company &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 </body>
+
+<script type="text/javascript" script src="/static/js/main.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" script src="/static/js/bootstrap.min.js"></script>
+</html>

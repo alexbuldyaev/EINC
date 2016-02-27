@@ -2,7 +2,7 @@
 
 body {
   padding-bottom: 40px;
-  color: #5a5a5a;
+  color: #ffd480;
 }
 
 
@@ -41,7 +41,7 @@ body {
 
 .carousel .item {
   height: 500px;
-  background-color: #777;
+  background-color: #ffe680;
 }
 .carousel-inner > .item > img {
   position: absolute;

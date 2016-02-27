@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {%load staticfiles%}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>E-INC insurance</title>
+
+    <link  rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}" type = 'text/css'/>
+
+
+    <link href="{%static 'css/ie10-viewport-bug-workaround.css'%}" rel="stylesheet">
+    <script src="{%static 'js/ie-emulation-modes-warning.js'%}"></script>
+
+    <link  rel="stylesheet" href="{%static 'css/carusel.css' %}" type = 'text/css'/>
+    <link  rel="stylesheet" href="{%static 'css/con.css' %}" type = 'text/css'/>
+    <link  rel="stylesheet" href="{%static 'css/con2.css' %}" type = 'text/css'/>
+    <script type="text/javascript" script src="/static/js/map.js"></script>
+  </head>
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">E-INS</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="/">Home</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="/contact">Контакты</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Для меня <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Мои расчеты</a></li>
+
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">Nav header</li>
+                    <li><a href="#">Зарегестрироваться</a></li>
+                    <li><a href="/signin">Войти в ЛК</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+    <hr class="featurette-divider">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 col-lg-8">
+                <h1 class="h1">
+                    Свяжитесь с нами <small>в любое удобное для Вас время</small></h1>
+            </div>
+        </div>
+    </div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="well well-sm">
+                <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                ФИО</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter name" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Email</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Тема</label>
+                            <select id="subject" name="subject" class="form-control" required="required">
+                                <option value="na" selected="">Выберите:</option>
+                                <option value="service">Жалоба</option>
+                                <option value="suggestions">Предложение</option>
+                                <option value="otzyv">Отзыв</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Текст сообщения</label>
+                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-primary pull-right" id="btnContactUs">
+                            Отправить сообщение</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <form>
+            <legend><span class="glyphicon glyphicon-globe"></span> Контакты штаб-квартиры</legend>
+            <address>
+                <strong>EINC</strong><br>
+                Kochnovskiy,3<br>
+                Moscow, Russia<br>
+                <abbr title="Phone">
+                    P:</abbr>
+                000-000-000
+            </address>
+            <address>
+                <strong>Buldyaev Alexander</strong><br>
+                <a href="mailto:#">alexbuldyaev@gmail.com</a>
+            </address>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+ <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; E-INS company &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+
+
+
+    <script type="text/javascript" script src="/static/js/main.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" script src="/static/js/bootstrap.min.js"></script>
+</html>
