@@ -967,7 +967,7 @@ function re_count(){
 		
 		sum*=1.8
 		sum2*=1.8
-		
+
 	}
 	else {
 		koeff['Список допущенных водителей']['ограниченный']=1
@@ -1032,6 +1032,11 @@ function re_count(){
 		document.getElementById('result').innerHTML=Math.round(sum*100)/100
 	}else{
 		document.getElementById('result').innerHTML=(Math.round(sum*100)/100)+' &minus; '+(Math.round(sum2*100)/100)
+	}
+
+	unactivetocar = [];
+	for(var i=1;i<=9;i++){
+		unactivetocar[i] = false;
 	}
 	
 

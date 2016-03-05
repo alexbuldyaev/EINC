@@ -21,6 +21,7 @@
     <link  rel="stylesheet" href="{%static 'css/carusel.css' %}" type = 'text/css'/>
     <link  rel="stylesheet" href="{%static 'css/con.css' %}" type = 'text/css'/>
     <link  rel="stylesheet" href="{%static 'css/con2.css' %}" type = 'text/css'/>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&language=en"></script>
     <script type="text/javascript" script src="/static/js/map.js"></script>
   </head>
 <!-------------------------------------------------------------------------------------------------------------------------------------------->
@@ -143,6 +144,36 @@
         </div>
     </div>
 </div>
+
+
+    
+    <!-- карта -->
+    <div class="block_sing_map">
+        <div id="map_canvas"></div>
+        <div class="white_blocker_map">
+            <div class="close_contact"></div>
+            <div class="block_sing_map_head">Контакты</div>
+            <div>
+                <div class="inline_blocks_page white_blocker_map_img">
+                    <img src="https://data.showfxworld.com/i/img/promo/moscow_151215_12.jpg">
+                </div>
+                <div class="inline_blocks_page white_blocker_map_contact">
+                    <div>
+                        <div class="inline_blocks_page soc_moscow soc_8"></div>
+                        <div class="inline_blocks_page left_social_1">Кочновский, 3</div>
+                    </div>
+                    <div style="padding: 5px 0;">
+                        <div class="inline_blocks_page soc_moscow soc_1"></div>
+                        <div class="inline_blocks_page left_social_1"><a href="/">alexbuldyaev@gmail.com</a></div>
+                    </div>
+                    <div>
+                        <div class="inline_blocks_page soc_moscow soc_9"></div>
+                        <div class="inline_blocks_page left_social_1"><a href="tel:+70000000000">7 0000000000</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
  <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
