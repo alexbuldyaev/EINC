@@ -148,7 +148,7 @@
 
 <script type="text/javascript">
   VK.init({
-    apiId: EINC,
+    apiId: 5335399,
     onlyWidgets: true
   });
 </script>
