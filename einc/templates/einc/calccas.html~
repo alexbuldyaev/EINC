@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"> 
+
+	<title></title> 
+  
+    <link href="/kasko_calc/css/bootstrap.css" rel="stylesheet">
+    <link href="/kasko_calc/css/bootstrap-select.css" rel="stylesheet">
+	 
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]--> 
+    <script src="/kasko_calc/config.js"></script>
+
+    <script src="http://calc.kasko10.ru/kasko_calc/jquery-1.10.2.min.js"></script>
+    <script src="http://calc.kasko10.ru/kasko_calc/bootstrap.min.js"></script>    
+    <script src="http://calc.kasko10.ru/form/js/jquery.form.js"></script>
+    <script src="/kasko_calc/kasko_calc.js"></script>
+    <script src="http://calc.kasko10.ru/kasko_calc/bootstrap-select.min.js"></script>
+      
+  </head>
+
+  <body>
+ 
+		<div id='load_bar' style='display:none;'>
+		  <h3>Идет расчет стоимости полиса КАСКО...</h3>
+		  <div class="progress progress-striped active">
+		    <div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 1%">
+		    </div>
+		  </div>
+		</div>
+
+    
+
+<div class='popup' id='calc_popup' style='margin:0 auto'>
+  <div id='first_form'> 
+	<div class='drivers' style='width:650px;margin:0 auto;text-align:center;'>
+	<form action='/form/data/save.php' method='post' id='insert'>
+
+	<label>Вид страхования</label>
+ 
+
+
+
+<!-- КАСКО - УЩЕРБ-->
+
+	<div class="input-group" data-toggle="buttons" style='margin:0 auto'>
+		<label class="btn btn-primary active" style="width: 295px">
+			<input type="radio" name="type" value="1" checked='checked'>КАСКО (Угон+Ущерб)
+		</label>
+		<label class="btn btn-primary" style="width:295px">
+			<input type="radio" name="type" value="2"> Только Ущерб
+		</label>
+	</div>
+		
+<!-- КРЕДИТ - НЕ КРЕДИТ-->
+		
+	<div  class='credit_field'  style='margin:0 auto'>
+		<label>Информация о кредите</label>
+		<div class="input-group" data-toggle="buttons"  style='margin:0 auto'>
+			<label class="btn btn-primary active"  style="width:295px">
+				<input type="radio" name="kredit" value="2" checked='checked' style="width:294px"> ТС куплено за счет собственных средств
+			</label>
+			<label class="btn btn-primary" style="width:295px">
+				<input type="radio" name="kredit" value="1">Тс куплено в кредит
+			</label>
+		</div>
+	</div>
+
+<!-- БАНК--> 
+	   
+	<div class="input-group bank_field" style='display:none;margin:0 auto'>
+		<select name='bank' id='bank'  class="selectpicker" data-style="btn-primary" data-width="300px"  data-live-search="true">
+		 
+		</select>
+	</div> 
+
+<!-- МАРКА - МОДЕЛЬ -->
+		
+	<div class='models' >
+		<label>Транспортное средство</label>
+		<div class="input-group" style='margin:0 auto'>
+			<select name='mark' id='mark' class="selectpicker"  data-width="295px" data-style="btn-primary"  data-live-search="true"> 
+				<option value="0"  selected  >Марка авто</option>
+			 </select>
+					<select name='model' id='model' class="selectpicker" data-width="295px" data-style="btn-primary"  data-live-search="true">
+				 
+							<option value="0">---</option>
+
+					 </select>
+				</div> 
+		</div> 
+
+<!-- Мощность, год выпуска, год начала эксплуатации-->
+
+	<div class="input-group"  style='margin:0 auto'>
+		 
+<!-- Мощность двигателя-->
+		 
+			<select name='car_hp'  class="selectpicker"  data-width="180px" data-live-search="true" data-style="btn-primary">
+				<option value='0'>Мощность двигателя</option>
+			</select>
+
+<!-- Год выпуска ТС-->
+	<select name='year' id='year' class="selectpicker"  data-width="190px" data-style="btn-primary">
+		<option value='0'>Год выпуска</option>  
+	</select>
+
+<!--Год начала эксплуатации-->	
+
+	<select name='start_year'  id='start_year'  class="selectpicker"  data-width="210px" data-style="btn-primary">
+		<option value='0'>Год начала эксплуатации</option>   
+	</select>
+
+		</div>
+<!--Страховая сумма-->
+		
+	<label>Страховая сумма (руб.)</label>		
+		<div class="form-group"> 
+			<input type="text" required name='price' class="form-control" placeholder="Введите стоимость автомобиля в рублях" style='width:300px'>
+		</div>
+
+<!--Выбор водителей-->
+
+	<label>Лица, допущенные к управлению</label>
+	<div class="input-group" data-toggle="buttons"  style='margin:0 auto'>
+		<label class="btn btn-primary" style="width: 295px">
+			<input type="radio" name="type_access_to_drive" value="1">Ограниченный список водителей
+		</label>
+		<label class="btn btn-primary" style="width:295px">
+			<input type="radio" name="type_access_to_drive" value="2"> Любые водители без ограничений
+		</label>
+	</div>
+
+<!-- Возраст-стаж неограниченный-->
+
+	 <div  class='neogr_field' style='display:none; margin:0 auto'>
+		 <div class="input-group"  style='margin:0 auto'>
+			<select name='min_age'  class="selectpicker" data-style="btn-primary"  data-width="295px" data-live-search="true">
+			   <option value='0'>Минимальный возраст</option>
+			</select>
+
+			<select name='min_experience'  class="selectpicker" data-style="btn-primary"  data-width="295px" data-live-search="true">
+				<option value='-1'>Минимальный стаж</option>
+			</select>
+	   </div>
+	 </div>
+
+<!-- Возраст-стаж ограниченный-->
+
+	<div  class='ogr_field' style='display:none;'>
+
+<!--Количество водителей-->
+
+	<div class="input-group" data-toggle="buttons"  style='margin:0 auto'>
+		<label class="btn btn-primary" style="width:143px">
+			<input type="radio" name="ogr" value="1">1 водитель
+		</label>
+		<label class="btn btn-primary" style="width:142px">
+			<input type="radio" name="ogr" value="2">2 водителя
+		</label>
+		<label class="btn btn-primary" style="width: 142px">
+			<input type="radio" name="ogr" value="3">3 водителя
+		</label>
+		<label class="btn btn-primary" style="width:143px">
+			<input type="radio" name="ogr" value="4">4 водителя
+		</label>
+	</div>
+
+<!--Водитель1-->
+
+	<div  class='driver1' style='display:none;  margin:0 auto'>
+<label>Водитель №1</label>	    
+		<div class="input-group"  data-toggle="buttons" style='margin:0 auto'>
+		    <select name='driver_age[]'  class="selectpicker limit_driver_age"  data-count='1' data-style="btn-primary" data-width="143px" data-live-search="true">
+				    <option value='0'>Возраст</option>
+				 </select>
+
+			    <select name='driver_experience[]'  class="selectpicker limit_driver_exp1" id='limit_driver_exp1' data-style="btn-primary" data-width="142px" data-live-search="true">
+				    <option value='0'>Стаж</option>  
+			      </select>
+
+		    <label class="btn btn-primary"  style="width:142px">
+			    <input type="radio" name="driver_sex0" value="1" >Муж.
+		    </label>
+		    <label class="btn btn-primary" style="width:143px">
+			    <input type="radio" name="driver_sex0" value="2">Жен.
+		    </label>
+	    </div>
+		<div style='clear:both'></div>
+	</div>
+
+<!--Водитель2-->	
+	
+	<div  class='driver2' style='display:none;  margin:0 auto'>
+	
+<label>Водитель №2</label>	   	
+	
+		<div class="input-group"  data-toggle="buttons" style='margin:0 auto'>
+    
+		    <select name='driver_age[]'  class="selectpicker limit_driver_age"  data-count='2' data-style="btn-primary" data-width="143px" data-live-search="true">
+				    <option value='0'>Возраст</option>
+				 </select>
+
+			    <select name='driver_experience[]'  class="selectpicker limit_driver_exp"  id='limit_driver_exp2' data-style="btn-primary" data-width="142px" data-live-search="true">
+				    <option value='0'>Стаж</option>  
+
+			      </select>
+
+		    <label class="btn btn-primary"  style="width:142px">
+			    <input type="radio" name="driver_sex1" value="1" >Муж.
+		    </label>
+		    <label class="btn btn-primary" style="width:143px">
+			    <input type="radio" name="driver_sex1" value="2">Жен.
+		    </label>
+	    </div>
+	</div>
+
+<!--Водитель3-->	
+	
+	<div  class='driver3' style='display:none;  margin:0 auto'>
+<label>Водитель №3</label>	       
+		<div class="input-group"  data-toggle="buttons" style='margin:0 auto'>
+
+		    <select name='driver_age[]'  class="selectpicker limit_driver_age"  data-count='3' data-style="btn-primary" data-width="143px" data-live-search="true">
+				    <option value='0'>Возраст</option>
+				 </select>
+
+			    <select name='driver_experience[]'  class="selectpicker limit_driver_exp"  id='limit_driver_exp3' data-style="btn-primary" data-width="142px" data-live-search="true">
+				    <option value='0'>Стаж</option>  
+			      </select>
+
+		    <label class="btn btn-primary"  style="width:142px">
+			    <input type="radio" name="driver_sex2" value="1" >Муж.
+		    </label>
+		    <label class="btn btn-primary" style="width:143px">
+			    <input type="radio" name="driver_sex2" value="2">Жен.
+		    </label>
+	    </div>
+
+	</div>
+
+<!--Водитель4-->	
+	
+	<div  class='driver4' style='display:none;  margin:0 auto'>
+<label>Водитель №4</label>	   
+		<div class="input-group"  data-toggle="buttons" style='margin:0 auto'>
+		 
+		    <select name='driver_age[]'  class="selectpicker limit_driver_age" data-count='4' data-style="btn-primary" data-width="143px" data-live-search="true">
+				    <option value='0'>Возраст</option>
+
+				 </select>
+
+			    <select name='driver_experience[]'  class="selectpicker limit_driver_exp"  id='limit_driver_exp4' data-style="btn-primary" data-width="142px" data-live-search="true">
+				    <option value='0'>Стаж</option>  
+			      </select>
+
+
+		    <label class="btn btn-primary"  style="width:142px">
+			    <input type="radio" name="driver_sex3" value="1"  >Муж.
+		    </label>
+		    <label class="btn btn-primary" style="width:143px">
+			    <input type="radio" name="driver_sex3" value="2">Жен.
+		    </label>
+	    </div>
+		<div style='clear:both'></div>
+	</div>
+</div>
+	
+<!-- СТРАХОВАЯ ИСТОРИЯ -->
+	<div  class='history_select_field' style='display:none; margin:0 auto'>
+	<label>Страховая история</label>
+
+	<div class="input-group" data-toggle="buttons" style='margin:0 auto'>
+		<label class="btn btn-primary active"   style="width: 295px">
+			<input type="radio" name="insurance_history" value="1" checked='checked'>ТС страхуется впервые
+		</label>
+		<label class="btn btn-primary" style="width:295px">
+			<input type="radio" name="insurance_history" value="2"> ТС ранее страховалось
+		</label>
+	</div>
+
+<!-- СТРАХОВАЯ КОМПАНИЯ И УБЫТКИ -->
+
+<center>
+
+	<div  class='history_field' style='display:none; margin:0 auto'>
+		
+			 <div class="input-group"  data-toggle="buttons" style='margin:0 auto'>
+		 
+					<select name='ck'  id='ck'  class="selectpicker" data-style="btn-primary" data-width="295px">
+		 
+					</select>
+				<label class="btn btn-primary"  style="width:142px">
+					<input type="radio" name="damage" value="1"> Были убытки
+				</label>
+				<label class="btn btn-primary active" style="width:143px">
+					<input type="radio" name="damage" value="2" checked>Не было убытков
+				</label>
+			</div>
+		<div style='clear:both'></div>
+	</div>
+</div>
+
+		<div class="form-group">    
+       
+        <button type="submit" class="btn btn-danger">Рассчитать</button>
+		</div>	
+</center>
+
+				    <input type='hidden' name='integrate' value='1'>
+				    <input type='hidden' name='integrate_key' value='1'>
+				    <input type='hidden' name='domain' >
+				    <input type='hidden' name='disconts' >
+				    <input type='hidden' name='rassrochka' id='rassrochka_form1' value='1'>
+				    <input type='hidden' name='agregatnaya' id='agregatnaya_form1' value='0'>
+				    <input type='hidden' name='franshiza' id='franshiza_form1' value='0'>
+		</form>
+	
+	      <div id='err_info' style='color:red'></div>
+	</div>
+</div>
+
+<!-- форма на странице  результатов -->
+			
+<div id='second_form' class='drivers' style='width:650px;margin:0 auto;text-align:center;display:none;'>
+					<h2>РЕЗУЛЬТАТ РАСЧЕТА</h2>
+					<div  class='popup_body'>
+						<hr>
+						<div id='auto'></div>
+						<hr>
+				
+				
+				<form action='' method='post' id='insert2'>
+	
+
+<!-- Кнопки вывода дешевле -->
+
+<div class='cheep_but'>	
+	<div class="input-group" data-toggle="buttons" data-style="btn-danger"  style='margin:0 auto'>
+		<label class="btn btn-primary" style="width: 275px">
+			<input type="radio" name="cheep" value="1" class="disabled">Сделать дешевле
+		</label>
+	</div>
+</div>
+<div class='cheep_field' style='display:none';>	
+			
+<!--Франшиза кнопки-->
+				<label>Франшиза</label>
+				<div class="input-group bank_field" style='margin:0 auto'>
+	    
+				   <select id='franshiza' name='franshiza'  class="selectpicker active2" data-style="btn-primary" data-width="300px">
+						<option value='0' >Выбрать значение</option> 
+						<option value="3000" >3000</option>
+						    
+						    <option value="4000" >4000</option>
+						    
+						    <option value="5000" >5000</option>
+						    
+						    <option value="6000" >6000</option>
+						    
+						    <option value="7000" >7000</option>
+						    
+						    <option value="9000" >9000</option>
+						    
+						    <option value="10000" >10000</option>
+						    
+						    <option value="12000" >12000</option>
+						    
+						    <option value="15000" >15000</option>
+						    
+						    <option value="20000" >20000</option>
+						    
+						    <option value="25000" >25000</option>
+						    
+						    <option value="30000" >30000</option>
+
+						<option value='0'>без франшизы</option> 
+				   </select>
+				</div> 	
+
+<!-- Рассрочка кнопки-->
+
+					<label>Рассрочка</label>
+	<div class="input-group" data-toggle="buttons" style='margin:0 auto'>
+		<label class="btn btn-primary active"   style="width: 143px">
+			<input type="radio" name="rassrochka" value='1' checked='checked'>Единовременно
+		</label>
+		<label class="btn btn-primary" style="width:142px">
+			<input type="radio" name="rassrochka" value='2'>2 платежа
+		</label>
+		<label class="btn btn-primary"   style="width: 142px">
+			<input type="radio" name="rassrochka" value='3'>3 платежа
+		</label>
+		<label class="btn btn-primary" style="width:143px">
+			<input type="radio" name="rassrochka" value='4'>4 платежа
+		</label>
+	</div>
+
+<!-- Агрегатная кнопки-->	
+
+	<label>Вид страховой суммы</label>
+
+	<div class="input-group" data-toggle="buttons"  style='margin:0 auto'>
+		<label class="btn btn-primary active"   style="width: 295px">
+			<input type="radio" name="agregatnaya" value="0" checked='checked'>Неагрегатная (неуменьшаемая)
+		</label>
+		<label class="btn btn-primary" style="width:295px">
+			<input type="radio" name="agregatnaya" value="1"> Агрегатная (вычитаемая)
+		</label>
+	</div>
+	</div>		
+<!--Конец дешевле кнопки-->	
+					 
+	 
+				</form>
+	<label>Результат расчета</label>
+<!-- Блок раскрыть все-->
+				<div style='margin:0 auto'>
+							</i><a href='javascript:void(0)' data-status='close' id='open_all_detail'>Раскрыть все</a> |
+							</i><a href='' target='_blank'  id='print_link'>Распечатать</a> 
+					<!--		</i><a href='javascript:void(0);'  onclick='$(\"#error_field\").fadeIn();'  id='send_error'>Сообщить об ошибке</a>-->
+							  
+							  </div>
+<!-- Крнец раскрыть все-->							  
+	
+<div style='margin:0 auto;color:red;display:none' id='demo_info'>
+
+</div>
+
+	
+	<div class=' result' style='background-color:#fff;width:600px; margin:0 auto;'>	
+<table class="table table-striped">
+<thead>
+<tr> 
+<th colspan='2'>Страховая компания</th>
+<th>Тариф%</th>
+<th>Стоимость полиса</th> 
+<th>Условия страхования</th> 
+</tr>
+</thead>
+<tbody  id='place_for_cks'> 
+</tbody>
+<tr id='clone' style='display:none;'  data-status='close'>
+<td width="146px" class='ck_logo' data-val=''><img src="" width="120" class="thumbnail"></td>
+<td width="120px" align="center"><span class='ck_title' data-val=''></span></td>
+<td width="80px" align="center"><span class='ck_tariff'></span> %</td>
+<td width="152px" align="center">
+  <b><span class='ck_price'></span> руб.</b>
+
+
+		<div class='ck_discount_block' style='display:none;'  >
+		  Цена со скидкой:<br> <span class='ck_price_with_discont'></span>руб.<br>
+		  Экономия:<br><span class='ck_price_economy'></span>руб.<br>
+		 </div> 
+						
+</td>
+<td width="102px" align="center" style='cursor:pointer' class='ck_more'><img src="/kasko_calc/img/down.png"></td>
+</tr>
+<tr id='clone_detail' style='display:none;'>
+<td style="border-style: solid; border-left:1px; border-color:#dddddd" colspan='4'> <span class='detail'></span>
+<!--Заказ-->
+		<div class='order_but_field' style='text-align:right' >    
+         <button type="submit" name="order" value="1" class="btn btn-danger">Оформить полис</button>
+		 </div>
+		 <div class='order_field' style='text-align:right; display:none'>
+		  <form action='' method='post' class='send_order'>
+
+		    <input type="text" class="form-order" required="required" name="name" placeholder="Как Вас зовут?">
+		   <input type="text" class="form-order" required="required" name="contacts" placeholder="Как с Вами связаться? (телефон или e-mail)">
+		    <input type="text" class="form-order" name="comments" placeholder="Ваши пожелания...">
+			 <input type='hidden' name='document_id'  class='doc_id' value='0'>
+			 <input type='hidden' name='ck_title'  value='0'>
+			 <input type='hidden' name='orders_email'  value='0'>
+
+		    <div style='text-align:right' >    
+		     <button type="submit" class="btn btn-danger">Отправить заявку</button>
+			<button type="button" name="order" value="2" class="btn">Скрыть форму</button>
+			</div>
+		  </form>
+		 </div>
+		 <div class='order_field_ok' style='text-align:right; display:none'>
+		  Заказ оформлен, с вами свяжутся в ближайшее время!
+		 </div>
+		 <!--Конец  заказа-->						
+ </td> 
+<td align="center"><a href='' class='pravila' target='_blank'><img src="/kasko_calc/img/pravila.png">правила страхования</a></td> 
+</tr>
+</table>
+</div>
+				  
+							  <div id='error_field' class=' hide' style='padding-left:10px'>
+									<form action='backend.php?action=send_error' method='post' id='insert_error'>
+									<div> 
+										<table  class="table table-striped">
+										<tr>
+											<td width='50%'>
+											<div  class='col1'>Страховая <a href='#' class='while' title='Выберите страховую, в которой есть ошибка'>(?)</a>:
+											</div>
+											 <div class='cl'></div>
+											</td>
+											
+											<td width='50%'>
+												<select id='ck' name='ck' class='active3'>
+													<option value='0' selected=''>Выбрать строховую</option> 
+							 
+												</select>
+											</td>
+											</tr>
+											<tr>
+											<td width='50%'>
+											<div  class='col1'>Ваш email :
+											</div>
+											 <div class='cl'></div>
+											</td>
+											
+											<td width='50%'>
+										    <input type='text' name='email' value='' style='color:#403f40;width:162px;height:32px;border:0;line-height:34px;padding:0 9px;font-size:10px;	background:url(/form/img_blue/field2.png) no-repeat;'>
+
+											</td>
+											</tr>
+											</table>
+										
+										<div>
+											<button type='submit' id='submit' class='contact-send contact-button'>Отправить</button> 
+										    <input type='hidden' name='doc_id' id='doc_id' class='doc_id' value='0'>
+										       <input type='hidden' name='agent_id' value='2027'>
+										</div>
+								</div>
+								</form>  			
+							  </div>
+							  <div id='error_field_info' class=' hide'>
+							  
+							  </div>		  
+			  
+				
+				<div id='info-err' class='hide'> </div>
+				<div id='info' class=' result' style='background-color:#fff;width:600px; margin:0 auto;'> </div>
+				
+							</div>
+		</div>
+	</div> 
+ 
+ 
+
+  </body>
+</html>
