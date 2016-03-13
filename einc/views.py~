@@ -39,6 +39,13 @@ def paypal_success(request):
     return HttpResponse("Money is mine. Thanks.")
 
 
+def home(request):
+
+    if request.user.is_authenticated():
+        return HttpResponse("{0} <a href='/accounts/logout'>exit</a>".format(request.user))
+    else:
+        return HttpResponse("<a href='/login/vk-oauth2/'>login with VK</a>")
+
 @login_required
 def paypal_pay(request):
     paypal_dict = {

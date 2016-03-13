@@ -52,7 +52,7 @@ def paypal_pay(request):
         "business": "acccko-facilitator@gmail.com",
         "amount": "100.00",
         "currency_code": "RUB",
-        "item_name": "products in socshop",
+        "item_name": "products in EINC",
         "invoice": "INV-00001",
         "notify_url": reverse('paypal-ipn'),
         "return_url": "http://alexbu.pythonanywhere.com/payment/success/",
@@ -62,6 +62,6 @@ def paypal_pay(request):
 
     form = PayPalPaymentsForm(initial=paypal_dict)
     context = {"form": form, "paypal_dict": paypal_dict}
-    return render(request, "payment.html", context)
+    return render(request, "einc/payment.html", context)
 
 
