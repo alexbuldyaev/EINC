@@ -24,6 +24,7 @@
 
     <link  rel="stylesheet" href="{%static 'css/carusel.css' %}" type = 'text/css'/>
     <link  rel="stylesheet" href="{%static 'css/signin.css' %}" type = 'text/css'/>
+    <link  rel="stylesheet" href="{%static 'css/social-buttons-3.css' %}" type = 'text/css'/>
   </head>
 <!-------------------------------------------------------------------------------------------------------------------------------------------->
   <body>
@@ -47,7 +48,7 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home</a></li>
                 <li><a href="#about">О нас</a></li>
-                <li><a href="contact">Контакты</a></li>
+                <li><a href="/contact">Контакты</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Для меня <span class="caret"></span></a>
                   <ul class="dropdown-menu">
@@ -83,6 +84,9 @@
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
       </form>
+      <div class = "container">
+      <a href ="/accounts/login" class="btn btn-vk" class="btn btn-large btn-block btn-primary" allign = "center" ><i class="fa fa-vk"></i> | Connect with VK</a>
+      </div>
    </div>
 <!-------------------------------------------------------------------------------------------------------------------------------------------->
 </body>
