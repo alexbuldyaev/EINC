@@ -49,7 +49,7 @@ def home(request):
 @login_required
 def paypal_pay(request):
     paypal_dict = {
-        "business": "acccko-facilitator@gmail.com",
+        "business": "alexbuldyaev-facilitator@gmail.com",
         "amount": "100.00",
         "currency_code": "RUB",
         "item_name": "products in EINC",
