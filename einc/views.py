@@ -46,6 +46,10 @@ def home(request):
     else:
         return HttpResponse("<a href='/login/vk-oauth2/'>login with VK</a>")
 
+def add(request):
+    return HttpResponse("Is added")
+
+
 @login_required
 def paypal_pay(request):
     paypal_dict = {

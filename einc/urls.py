@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^signin/', views.post_signin, name='post_signin'),
     url(r'^bepay/', views.post_bepay, name='post_bepay'),
     url(r'^contact/', views.post_contact, name='post_contact'),
+    url(r'^add-to-cart/$', views.add, name='add')
 ]
 
 

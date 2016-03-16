@@ -17,6 +17,7 @@
 
     <link href="{%static 'css/ie10-viewport-bug-workaround.css'%}" rel="stylesheet">
     <script src="{%static 'js/ie-emulation-modes-warning.js'%}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <link  rel="stylesheet" href="{%static 'css/show.css' %}" type = 'text/css'/>
     <link  rel="stylesheet" href="{%static 'css/carusel.css' %}" type = 'text/css'/>
@@ -90,8 +91,8 @@
                 <div class="db-wrapper">
                     <div class="db-pricing-eleven db-bk-color-one">
                         <div class="price">
-                            <sup>Р</sup>1900
-                                <small>год</small>
+                            <td><span id="content"></span> руб.</td>
+
                         </div>
                         <div class="type">
 				<img src = "/static/img/01.jpg" width="200" height="150">
@@ -103,7 +104,7 @@
                         </ul>
                         <div class="pricing-footer">
 
-                            <a href="#" class="btn db-button-color-square btn-lg">Положить в корзину</a>
+                            <a href="/" class="btn db-button-color-square btn-lg">Положить в корзину</a>
                         </div>
                     </div>
                 </div>
@@ -160,6 +161,10 @@
                     <div class="price">
                         <sup>P</sup>2500
                                 <small>год</small>
+                        <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+    <input id="id_business" name="business" type="hidden" value="alexbuldyaev-facilitator@gmail.com" /><input id="id_amount" name="amount" type="hidden" value="100.00" /><input id="id_item_name" name="item_name" type="hidden" value="products in EINC" /><input id="id_notify_url" name="notify_url" type="hidden" value="/paypal/" /><input id="id_cancel_return" name="cancel_return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/cart/" /><input id="id_return_url" name="return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/success/" /><input id="id_custom" name="custom" type="hidden" value="2" /><input id="id_invoice" name="invoice" type="hidden" value="INV-00001" /><input id="id_cmd" name="cmd" type="hidden" value="_xclick" /><input id="id_charset" name="charset" type="hidden" value="utf-8" /><input id="id_currency_code" name="currency_code" type="hidden" value="RUB" /><input id="id_no_shipping" name="no_shipping" type="hidden" value="1" />
+    <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="Buy it Now" />
+</form>
                     </div>
                     <div class="type">
                         <img src = "/static/img/04.jpg" width="200" height="150">
@@ -194,6 +199,16 @@
 <img alt="" border="0" src="https://www.paypalobjects.com/ru_RU/i/scr/pixel.gif" width="1" height="1">
 </form>
 
+
+<script>
+$.ajax({
+   url:"/countosg/",
+   type:"GET",
+   success: function(data){
+       $("#content").html($(data).find("#result").html());
+   }
+});
+</script>
 
 
 <!-------------------------------------------------------------------------------------------------------------------------------------------->
