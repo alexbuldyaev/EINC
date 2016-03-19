@@ -565,7 +565,7 @@ required_inputs_or=[]
                                   </tr>
                                   <tr>
                                     <td class="nameLabel"><b>ОСАГО &nbsp;&nbsp;</b></td>
-                                    <td>Итого: <span id="result">0</span> руб.</td>
+                                    <td>Итого: <span id="result">руб.</span></td>
                                   </tr>
 					
                                   <tr>
@@ -577,11 +577,11 @@ required_inputs_or=[]
                                   <tr><td class="colspan" colspan=2>
                                     <div id="error" class="error"></div> 
                                   </td></tr>
-                                  <button id="result" type = 'button' class="add">  Сохранить расчет </button>
+                                  <button id="result1" type = 'button' class="add">  Сохранить расчет </button>
                                   <input type='hidden' name='csrfmiddlewaretoken' value='{{csrf_token}}'>	
 
                                 </table>
-                               <button id="result" class="add">  Сохранить расчет </button>
+                                <button id="result2" class="add">  Сохранить расчет </button>
                                 <input type='hidden' name='csrfmiddlewaretoken' value='{{csrf_token}}'>	
 
 
@@ -594,7 +594,7 @@ required_inputs_or=[]
                               <p><i>Поля, отмеченные звездочкой (<span class="mandatory">*</span>), обязательны для заполнения.</i></p>
                               <p><b><span style="color:red;">ВНИМАНИЕ:</span></b></p>
                               <p><i><b>Результаты расчета являются предварительными и не могут считаться официальным предложением E-Ins. Вы можете узнать точную стоимость полиса, связавшись с нашим сотрудником.</b></i></p>
-				<button  id="result" class="add">  Сохранить расчет </button>
+				<button  id="result3" class="add">  Сохранить расчет </button>
                                 <input type='hidden' name='csrfmiddlewaretoken' value='{{csrf_token}}'>	
 
                               <input type="text" id="resultAnchor" name="resultAnchor" style="width:0px;height:0px;border:0px;"/> 
@@ -611,9 +611,23 @@ required_inputs_or=[]
     </div>
 </div>
 <!-------------------------------------------------------------------------------------------------------------------------------------------->
+<script>
+$(document).ready(function(){
+  $( "button.add" ).click(function(){
+    var current_button = $(this);
+    $.ajax({
+        url: "/add-to-cart/",
+        type: "GET",
+        data: "result1",
+        success: function(data){
+          current_button.replaceWith(data);
+        }
+    });
+   });
+});
+</script>
 					
 <script>
-
 var fields=[];
 fields['1']='Собственник';
 fields['2']='Тип';
@@ -1030,8 +1044,14 @@ function re_count(){
 	
 	if(sum2==0){
 		document.getElementById('result').innerHTML=Math.round(sum*100)/100
+                document.getElementById('result1').innerHTML=Math.round(sum*100)/100
+                document.getElementById('result2').innerHTML=Math.round(sum*100)/100
+                document.getElementById('result3').innerHTML=Math.round(sum*100)/100
 	}else{
 		document.getElementById('result').innerHTML=(Math.round(sum*100)/100)+' &minus; '+(Math.round(sum2*100)/100)
+                document.getElementById('result1').innerHTML=(Math.round(sum*100)/100)+' &minus; '+(Math.round(sum2*100)/100)
+                document.getElementById('result2').innerHTML=(Math.round(sum*100)/100)+' &minus; '+(Math.round(sum2*100)/100)
+                document.getElementById('result3').innerHTML=(Math.round(sum*100)/100)+' &minus; '+(Math.round(sum2*100)/100)
 	}
 
 	unactivetocar = [];
@@ -1087,21 +1107,7 @@ setInterval('re_count()', 30)
 </script>
 
 
-<script>
-$(document).ready(function(){
-  $( "button.add" ).click(function(){
-    var current_button = $(this);
-    $.ajax({
-        url: "/add-to-cart/",
-        type: "GET",
-        data: "result",
-        success: function(data){
-          current_button.replaceWith(data);
-        }
-    });
-   });
-});
-</script>
+
 <!-------------------------------------------------------------------------------------------------------------------------------------------->
 
 
