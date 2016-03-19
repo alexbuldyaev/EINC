@@ -47,7 +47,7 @@ def home(request):
         return HttpResponse("<a href='/login/vk-oauth2/'>login with VK</a>")
 
 def add(request):
-    return HttpResponse("Добавлен")
+    return HttpResponse("Is added")
 
 
 @login_required

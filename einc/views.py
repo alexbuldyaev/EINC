@@ -23,10 +23,12 @@ def post_bepay(request):
     return render(request, 'einc/bepay.html', {})
 def post_contact(request):
     return render(request, 'einc/contact.html', {})
+    
 
 
 def account_profile(request):
-    return HttpResponse("Hi, {0}! Nice to meet you.".format(request.user.first_name))
+    return render(request, 'einc/hello.html', {0}.format(request.user.first_name))
+    #return HttpResponse("Hi, {0}! Nice to meet you.".format(request.user.first_name))>
 
 
 def account_logout(request):
