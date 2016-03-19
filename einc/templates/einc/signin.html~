@@ -85,7 +85,7 @@
         <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
       </form>
       <div class = "container">
-      <a href ="/accounts/login" class="btn btn-vk" class="btn btn-large btn-block btn-primary" allign = "center" ><i class="fa fa-vk"></i> | Connect with VK</a>
+      <a href ="/accounts/login" class="btn btn-vk" ><i class="fa fa-vk"></i> | Connect with VK</a>
       </div>
    </div>
 <!-------------------------------------------------------------------------------------------------------------------------------------------->
