@@ -27,8 +27,7 @@ def post_contact(request):
 
 
 def account_profile(request):
-    return render(request, 'einc/hello.html', {0}.format(request.user.first_name))
-    #return HttpResponse("Hi, {0}! Nice to meet you.".format(request.user.first_name))>
+    return HttpResponse("Hi, {0}! Nice to meet you.".format(request.user.first_name))>
 
 
 def account_logout(request):
