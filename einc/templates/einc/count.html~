@@ -537,7 +537,9 @@ required_inputs_or=[]
 
 	</tr>
 </table>
-<table>            
+</form>
+
+        
 
                              <tr>
                              <td class="nameLabel">
@@ -575,10 +577,10 @@ required_inputs_or=[]
                                   <tr><td class="colspan" colspan=2>
                                     <div id="error" class="error"></div> 
                                   </td></tr>
-                                  <button id="result" type = 'button'class="add">  Сохранить расчет </button>
+                                  <button id="result" type = 'button' class="add">  Сохранить расчет </button>
                                   <input type='hidden' name='csrfmiddlewaretoken' value='{{csrf_token}}'>	
 
-                                </table>
+                              
                                <button id="result" class="add">  Сохранить расчет </button>
                                 <input type='hidden' name='csrfmiddlewaretoken' value='{{csrf_token}}'>	
 
@@ -588,8 +590,7 @@ required_inputs_or=[]
                                 <input type="hidden" name="region" value="9" />
                                 <input type="hidden" name="category" value="1">  
                                 <input type="hidden" name="action" value="calcAutoOsago"/>
-                              </form>
-
+                              
                               <p><i>Поля, отмеченные звездочкой (<span class="mandatory">*</span>), обязательны для заполнения.</i></p>
                               <p><b><span style="color:red;">ВНИМАНИЕ:</span></b></p>
                               <p><i><b>Результаты расчета являются предварительными и не могут считаться официальным предложением E-Ins. Вы можете узнать точную стоимость полиса, связавшись с нашим сотрудником.</b></i></p>
