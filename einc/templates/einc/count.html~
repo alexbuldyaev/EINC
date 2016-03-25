@@ -18,7 +18,7 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{%static 'css/ie10-viewport-bug-workaround.css'%}" rel="stylesheet">
     <script src="{%static 'js/ie-emulation-modes-warning.js'%}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -28,6 +28,11 @@
 
     <!-- Custom styles for this template -->
     <link  rel="stylesheet" href="{%static 'css/carusel.css' %}" type = 'text/css'/>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
+
+
   </head>
 <!--NAVBAR
 ================================================== -->
@@ -565,9 +570,18 @@ required_inputs_or=[]
                                   </tr>
                                   <tr>
                                     <td class="nameLabel"><b>ОСАГО &nbsp;&nbsp;</b></td>
-                                    <td>Итого: <id="result">руб.</td>
+                                    <td>Итого: <span id="result">руб.</span></td>
                                   </tr>
-					
+			           
+<input type="button" id="btnCookie" value="Выбрать компанию" />
+<script>
+$(document).ready(function() {
+    $('btnCookie').click(function() {
+        localStorage.setItem("price",$(this).val());
+        });
+}); 
+</script>
+		
                                   <tr>
                                     <td class="nameLabel"><b>ДГО</b></td>
                                     <td id="liabilityPremium">&nbsp;</td>
@@ -1053,6 +1067,7 @@ function re_count(){
                 document.getElementById('result2').innerHTML=(Math.round(sum*100)/100)+' &minus; '+(Math.round(sum2*100)/100)
                 document.getElementById('result3').innerHTML=(Math.round(sum*100)/100)+' &minus; '+(Math.round(sum2*100)/100)
 	}
+        var elem=document.getElementById('result');
 
 	unactivetocar = [];
 	for(var i=1;i<=9;i++){
@@ -1116,8 +1131,9 @@ setInterval('re_count()', 30)
         <p>&copy; E-INS company &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 </body>
-
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src = "https://github.com/carhartl/jquery-cookie/blob/master/jquery.cookie.js"></script>
 <script type="text/javascript" script src="/static/js/main.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script type="text/javascript" script src="/static/js/bootstrap.min.js"></script>
+    <script>window.jQuery || document.write(<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>)</script>
+<script type="text/javascript" script src="/static/js/bootstrap.min.js"></script>
 </html>
