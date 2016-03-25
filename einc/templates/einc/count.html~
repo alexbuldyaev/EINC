@@ -570,7 +570,7 @@ required_inputs_or=[]
                                   </tr>
                                   <tr>
                                     <td class="nameLabel"><b>ОСАГО &nbsp;&nbsp;</b></td>
-                                    <td>Итого: <span id="result">руб.</span></td>
+                                    <td>Итого: <span id="result">2070</span></td>
                                   </tr>
 			           
 <input type="button" id="btnCookie" value="Выбрать компанию" />
@@ -591,8 +591,7 @@ $(document).ready(function() {
                                   <tr><td class="colspan" colspan=2>
                                     <div id="error" class="error"></div> 
                                   </td></tr>
-                                  <button id="result1" type = 'button' class="add">  Сохранить расчет </button>
-                                  <input type='hidden' name='csrfmiddlewaretoken' value='{{csrf_token}}'>	
+	
 
                                 </table>
                                 <button id="result2" class="add">  Сохранить расчет </button>
@@ -608,8 +607,7 @@ $(document).ready(function() {
                               <p><i>Поля, отмеченные звездочкой (<span class="mandatory">*</span>), обязательны для заполнения.</i></p>
                               <p><b><span style="color:red;">ВНИМАНИЕ:</span></b></p>
                               <p><i><b>Результаты расчета являются предварительными и не могут считаться официальным предложением E-Ins. Вы можете узнать точную стоимость полиса, связавшись с нашим сотрудником.</b></i></p>
-				<button  id="result3" class="add">  Сохранить расчет </button>
-                                <input type='hidden' name='csrfmiddlewaretoken' value='{{csrf_token}}'>	
+
 
                               <input type="text" id="resultAnchor" name="resultAnchor" style="width:0px;height:0px;border:0px;"/> 
                              </div>
