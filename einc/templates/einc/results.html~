@@ -8,7 +8,7 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="/static/img/favicon.ico">
 
     <title>E-INC insurance</title>
 
@@ -179,7 +179,61 @@
 
       <hr class="featurette-divider">
 
- 
+        <!-- contact -->
+        <section id="contact" class="row section">
+          <div id="container">
+            <div class="row">
+              <h2 class="section-title text-center">
+                <span class="section-title-border wow pulse" data-wow-duration="1s" data-wow-delay="1s">Get In Touch</span>
+              </h2>
+              <div class="section-info col-md-10 col-md-offset-1 text-center wow fadeInDown">
+                  <h3>We would love to hear from<strong> you.</strong></h3>
+                  <ul class="hr">
+                    <li class="hr-line"><span></span></li>
+                    <li class="hr-icon"><i class="icon_mail_alt"></i></li>
+                    <li class="hr-line"><span></span></li>
+                  </ul>
+                  <p>We welcome your inquiries at the email address below.We will get in touch with you soon.</p>
+              </div>            
+            </div>
+
+            <div class="row">            
+              <fieldset id="contactform" class="wow bounce" data-wow-duration="2s" data-wow-delay="0.5s">                
+                <div id="form_result"></div>
+                <div class="row">
+                  <div class="col-md-6 col-md-offset-3">
+                    <input name="name" type="text" id="name" class="form-control" placeholder="Full Name">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 col-md-offset-3">
+                    <input name="email" type="text" id="email" class="form-control" value="" placeholder="Valid email ID">
+                  </div>                
+                  <div class="col-md-3">
+                    <input name="phone" type="text" id="phone" class="form-control" value="" placeholder="Contact No">
+                  </div>
+                </div>
+                <div class="row">         
+                  <div class="col-md-6 col-md-offset-3">
+                    <textarea name="message" cols="40" rows="5" id="comments" class="form-control" placeholder="Your Message"></textarea>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12 text-center">                    
+                      <button type="submit" class="btn btn-white btn-lg" id="submit">SUBMIT</button>
+
+                  </div>
+                </div>
+              </fieldset>
+              <!-- </form> -->
+            </div>
+          </div>
+        </section>
+        <!-- /contact -->
+
+         <section id="google-map" class="row section">
+          <div id="map" data-lat="40.747688" data-lng="-74.004142"></div>
+        </section> 
 <!-------------------------------------------------------------------------------------------------------------------------------------------->
 
  
