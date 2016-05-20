@@ -50,6 +50,7 @@
                     <li class="dropdown-header">Nav header</li>
                     <li><a href="#">Зарегестрироваться</a></li>
                     <li><a href="/signin">Войти в ЛК</a></li>
+                    <li><a>account_profile</a></li>
                   </ul>
                 </li>
               </ul>
