@@ -44,9 +44,9 @@ class Driver(models.Model):
 class Usercli(models.Model):
     usrID = models.IntegerField()
     user = models.OneToOneField(User)
-    InsID = models.ForeignKey(Insured)
-    OwnID = models.ForeignKey(Owner)
-    DriID = models.ForeignKey(Driver)
+    InsID = models.OneToOneField(Insured, on_delete = models.CASCADE, primary_key = False,)
+    OwnID = models.OneToOneField(Owner, on_delete = models.CASCADE, primary_key = False,)
+    DriID = models.OneToOneField(Driver, on_delete = models.CASCADE, primary_key = False,)
 
 
 class PolicyCar(models.Model):
@@ -86,16 +86,7 @@ class PolicyHome(models.Model):
 
 class Order(models.Model):
     UserID = models.OneToOneField(Usercli,  on_delete = models.CASCADE, primary_key = False,)
-    PolNumb = models.OneToOneField(PolicyCar, on_delete = models.CASCADE, primary_key = False,)
-    PolType = models.OneToOneField(PolicyCar, on_delete = models.CASCADE, primary_key = False,)
-    MonSum  = models.OneToOneField(PolicyCar, on_delete = models.CASCADE, primary_key = False,)
-    StatusLoc  = models.OneToOneField(PolicyCar, on_delete = models.CASCADE, primary_key = False,)
-
-
-
-
-
-
+    PolCar = models.OneToOneField(PolicyCar , on_delete = models.CASCADE, primary_key = False,)
 
 
 
