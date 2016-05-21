@@ -2,14 +2,15 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 
-class Usercli(models.Model):
-    usrID = models.IntegerField()
-    email = models.ForeignKey('email.User')
-    nickname = models.ForeignKey('username.User')
-    password = models.ForeignKey('password.User')
-    InsID = models.ForeignKey(Insured)
-    OwnID = models.ForeignKey(Owner)
-    DriID = models.ForeignKey(Driver)
+class InsComp(models.Model):
+    CompName = models.CharField(max_length=200)
+    CompCont = models.CharField(max_length=200)
+
+class CalcRul(models.Model):
+    CompID = models.ForeignKey(InsComp)
+    PolicyType = models.CharField(max_length=10)
+    Rul1 = models.IntegerField()
+
 
 class Insured(models.Model):
     Name = models.CharField(max_length=50)
@@ -39,27 +40,20 @@ class Driver(models.Model):
     DrLicDate = models.DateField()
     DrLicIfVal = models.BooleanField()
 
-class Order(models.Model):
-    UserID = models.OneToOneField(Usercli,  on_delete = models.CASCADE, primary_key = False,)
-    PolNumb = models.OneToManyField(PolicyCar, on_delete = models.CASCADE, primary_key = False,)
-    PolType = models.OneToMAnyField(PolicyCar, on_delete = models.CASCADE, primary_key = False,)
-    MonSum  = models.OneToManyField(PolicyCar, on_delete = models.CASCADE, primary_key = False,)
-    StatusLoc  = models.ForeignKey(Status)
 
-class InsComp(models.Model):
-    CompName = models.CharField(max_length=200)
-    CompCont = models.CharField(max_length=200)
+class Usercli(models.Model):
+    usrID = models.IntegerField()
+    user = models.OneToOneField(User)
+    InsID = models.ForeignKey(Insured)
+    OwnID = models.ForeignKey(Owner)
+    DriID = models.ForeignKey(Driver)
 
-class CalcRul(models.Model):
-    CompID = models.ForeignKey(InsCompID)
-    PolicyType = models.CharField(max_length=10)
-    Rul1 = models.IntegerField()
 
 class PolicyCar(models.Model):
     PolicyID = models.IntegerField()
     PolicyType = models.BooleanField()
-    CompName = models.ForeignKey(InsCompID)
-    Status = models.OneToOneField(Order, on_delete = models.CASCADE, primary_key = False,)
+    CompName = models.ForeignKey(InsComp)
+    Status = models.IntegerField()
     MonSum = models.IntegerField()
     CarName = models.CharField(max_length=20)
     CarDate = models.DateField()
@@ -76,7 +70,7 @@ class PolicyCar(models.Model):
 class PolicyHome(models.Model):
     PolicyID = models.IntegerField()
     PolicyType = models.BooleanField()
-    CompName = models.ForeignKey(InsCompID)
+    CompName = models.ForeignKey(InsComp)
     Status = models.CharField(max_length=20)
     MonSum = models.IntegerField()
     HomeName = models.CharField(max_length=20)
@@ -87,6 +81,19 @@ class PolicyHome(models.Model):
     Insured = models.ForeignKey(Insured)
     Owner = models.ForeignKey(Owner)
     User = models.ForeignKey(Usercli)
+
+
+
+class Order(models.Model):
+    UserID = models.OneToOneField(Usercli,  on_delete = models.CASCADE, primary_key = False,)
+    PolNumb = models.OneToOneField(PolicyCar, on_delete = models.CASCADE, primary_key = False,)
+    PolType = models.OneToOneField(PolicyCar, on_delete = models.CASCADE, primary_key = False,)
+    MonSum  = models.OneToOneField(PolicyCar, on_delete = models.CASCADE, primary_key = False,)
+    StatusLoc  = models.OneToOneField(PolicyCar, on_delete = models.CASCADE, primary_key = False,)
+
+
+
+
 
 
 
