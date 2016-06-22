@@ -8,6 +8,7 @@ from einc import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^ddd/(\d{1})/(\d{7})/(\d{3})/(\d{10})/(\d{1})/(\d{4})/(\d{1})/$', views.mod_create, name='mod_create'),
     url(r'^',include('einc.urls')),
     url(r'^accounts/logout/$', views.account_logout, name='logout'),
     url(r'^accounts/login/$', views.home, name='login'),

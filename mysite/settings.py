@@ -56,6 +56,8 @@ MIDDLEWARE_CLASSES = [
 AUTHENTICATION_BACKENDS = (
 
     'django.contrib.auth.backends.ModelBackend',
+    'social.backends.facebook.FacebookOAuth2',
+    'social.backends.vk.VKOAuth2',
 )
 
 ROOT_URLCONF = 'mysite.urls'

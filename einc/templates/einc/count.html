@@ -102,7 +102,7 @@
                       
                       <div class="container" align = "center">
 
-                        <h1>Калькулятор ОСАГО</h1>
+                        <h1><a name = "calc">ШАГ1.КАЛЬКУЛЯЦИЯ</a></h1>
 
                         <div class="form">
 <form id="mainform" method="post"  onsubmit="return check_required(this)">
@@ -180,7 +180,7 @@ required_inputs_or=[]
 <option value="4">свыше 100 л.с. до 120 л.с. включительно</option>
 <option value="5">свыше 120 л.с. до 150 л.с. включительно</option>
 <option value="6">свыше 150 л.с.</option>
-</select></div><input name="Мощность_neogr" type="text" value="10" disabled style="display: none; border: none" />
+</select></div><input name="Мощность_neogr" type="text" value="0" disabled style="display: none; border: none" />
 		</td>
 
 	</tr>	<script>
@@ -195,7 +195,7 @@ required_inputs_or=[]
 	<td><div class="select_border"><select class="form_select" id ="spis" name="Список допущенных водителей"><option value="">&ndash;</option>
 <option value="1">ограниченный</option>
 <option value="2">неограниченный</option>
-</select></div><input name="Список допущенных водителей_neogr" type="text" value="10" disabled style="display: none; border: none" />
+</select></div><input name="Список допущенных водителей_neogr" type="text" value="0" disabled style="display: none; border: none" />
 		</td>
 
 	</tr>	<script>
@@ -210,7 +210,7 @@ required_inputs_or=[]
 	<td><div class="select_border"><select class="form_select" id = "minage" name="Минимальный возраст"><option value="">&ndash;</option>
 <option value="1">до 22 лет включительно</option>
 <option value="2">старше 22 лет</option>
-</select></div><input name="Минимальный возраст_neogr" type="text" value="10" disabled style="display: none; border: none" />
+</select></div><input name="Минимальный возраст_neogr" type="text" value="0" disabled style="display: none; border: none" />
 		</td>
 
 	</tr>	<script>
@@ -225,7 +225,7 @@ required_inputs_or=[]
 	<td><div class="select_border"><select class="form_select" id ="minexp" name="Минимальный стаж"><option value="">&ndash;</option>
 <option value="1">до 3 лет включительно</option>
 <option value="2">свыше 3 лет</option>
-</select></div><input name="Минимальный стаж_neogr" type="text" value="10" disabled style="display: none; border: none" />
+</select></div><input name="Минимальный стаж_neogr" type="text" value="0" disabled style="display: none; border: none" />
 		</td>
 
 	</tr>	<script>
@@ -247,7 +247,7 @@ required_inputs_or=[]
 <option value="7">9 месяцев</option>
 <option value="8">10 месяцев и более</option>
 
-</select></div><input name="Период использования_neogr" type="text" value="10" disabled style="display: none; border: none" />
+</select></div><input name="Период использования_neogr" type="text" value="0" disabled style="display: none; border: none" />
 		</td>
 
 	</tr>	<script>
@@ -261,18 +261,16 @@ required_inputs_or=[]
 	&nbsp;
 	</td>
 	<td><div class="select_border"><select class="form_select" id ="disc" name="Лет безаварийной езды"><option value="">&ndash;</option>
-<option value=1">это первый договор</option>
+<option value="1">это первый договор</option>
 <option value="2">1 год</option>
 <option value="3">2 года</option>
-<option value="4">3 года</option>
-<option value="5">4 года</option>
-<option value="6">5 лет</option>
-<option value="7">6 лет</option>
-<option value="8">7 лет</option>
-<option value="9">8 лет</option>
-<option value="10">9 лет</option>
-<option value="11">10 лет и более</option>
-</select></div><input name="Лет безаварийной езды_neogr" type="text" value="12" disabled style="display: none; border: none" />
+<option value="4">5 лет</option>
+<option value="5">6 лет</option>
+<option value="6">7 лет</option>
+<option value="7">8 лет</option>
+<option value="8">9 лет</option>
+<option value="9">10 лет и более</option>
+</select></div><input name="Лет безаварийной езды_neogr" type="text" value="0" disabled style="display: none; border: none" />
 		</td>
 
 	</tr>
@@ -281,49 +279,15 @@ required_inputs_or=[]
 
 
 <table>            
-
-                             <tr>
-                             <td class="nameLabel">
-                             </td>
-					
-                             <td class="bottom">
-                             <input class="btn btn-primary" type="submit" id = "b" value="Рассчитать" name="calculation">  
-                             </td>
-                             <td>
-                             <a >
-  			     <button type="button" id = "b" class="btn btn-primary">Выбрать компанию</button>
-
-			     </a>
-                             </td>
- 
-                                  </tr>
-
-
-                                  <tr><td class="nameHr" colspan=2></td></tr>
                                   <tr>
                                     <td class="nameLabel"></td>
-                                    <td><b>Стоимость полиса</b></td>
+                                    <td><b>Стоимость полиса/ С возможной скидкой</b></td>
                                   </tr>
                                   <tr>
                                     <td class="nameLabel"><b>ОСАГО &nbsp;&nbsp;</b></td>
                                     <td>Итого: <span id="result"></span></td>
                                     <td>Итого: <span id="result1"></span></td>
-                                  </tr>
-			           
-<input type="button" id="btnCookie" value="Выбрать компанию" />
-<script>
-$(document).ready(function() {
-    $('btnCookie').click(function() {
-        localStorage.setItem("price",$(this).val());
-        });
-}); 
-</script>
-		
-                                  <tr>
-                                    <td class="nameLabel"><b>ДГО</b></td>
-                                    <td id="liabilityPremium">&nbsp;</td>
-                                  </tr>                                  
-                                   
+                                  </tr>          
 
                                   <tr><td class="colspan" colspan=2>
                                     <div id="error" class="error"></div> 
@@ -331,15 +295,8 @@ $(document).ready(function() {
 	
 
                                 </table>
-                                <button id="result2" class="add">  Сохранить расчет </button>
+                                
                                 <input type='hidden' name='csrfmiddlewaretoken' value='{{csrf_token}}'>	
-
-
-                                <input type="hidden" name="driverCount" value="1" >  
-                                <input type="hidden" name="territory" value="77">  
-                                <input type="hidden" name="region" value="9" />
-                                <input type="hidden" name="category" value="1">  
-                                <input type="hidden" name="action" value="calcAutoOsago"/>
                               
                               <p><i>Поля, отмеченные звездочкой (<span class="mandatory">*</span>), обязательны для заполнения.</i></p>
                               <p><b><span style="color:red;">ВНИМАНИЕ:</span></b></p>
@@ -347,6 +304,72 @@ $(document).ready(function() {
 
 
                               <input type="text" id="resultAnchor" name="resultAnchor" style="width:0px;height:0px;border:0px;"/> 
+                              <h1><a name = "step2">ШАГ2.Информация об АВТО</a></h1>
+
+                              <form><table border="0" cellspacing="0">
+        {% csrf_token %}
+
+	<tr>
+		<td id="step1"></td><td class="nameLabel"></td><td> <b>Наименование АВТО</b>:
+	</td>
+	<td>
+	&nbsp;
+	</td>
+	<td><div class="select_border"><select class="form_select" id ="namecar" name="namecar"></div>
+        <option value="1">Ford</option>
+        <option value="2">Chevrolet</option>
+        <option value="3">Lada</option>
+        <option value="4">BMW</option>
+        <option value="5">Mercedes</option>
+		</td>
+
+	</tr>
+        <tr>
+		<td id="step1"></td><td class="nameLabel"></td><td> <b>VIN АВТО (7 цифр)</b>:
+	</td>
+	<td>
+	&nbsp;
+	</td>
+	<td><input maxlength="7" type="text" class="select_border" id="vin" name="vin" /></div>
+		</td>
+
+	</tr>
+	<tr>
+		<td id="step1"></td><td class="nameLabel"></td><td> <b>Цифровое знач.номера (3 цифры)</b>:
+	</td>
+	<td>
+	&nbsp;
+	</td>
+	<td><input maxlength="3" type="text" class="select_border" id="regnum" name="regnum" /></div>
+		</td>
+
+	</tr>
+	<tr>
+		<td id="step1"></td><td class="nameLabel"></td><td> <b>№ документа АВТО (10 цифр)</b>:
+	</td>
+	<td>
+	&nbsp;
+	</td>
+	<td><input maxlength="10" type="text" class="select_border" id="numdoc" name="numdoc" /></div>
+		</td>
+
+	</tr>
+<tr>
+		<td id="step1"></td><td class="nameLabel"></td><td> <b>Тип документа</b>:
+	</td>
+	<td>
+	&nbsp;
+	</td>
+	<td><div class="select_border"><select class="form_select" id ="typedoc" name="typedoc"><option value="">&ndash;</option>
+<option value="1">ПТС</option>
+<option value="2">СТС</option>
+</select></div>
+		</td>
+	</tr>
+</table>
+</form>
+
+
                              </div>
 
                       </div>
@@ -359,83 +382,77 @@ $(document).ready(function() {
     </div>
     </div>
 </div>
+
+
 <!-------------------------------------------------------------------------------------------------------------------------------------------->
 <script>
 $(document).ready(function(){
   $("b").click(function(){
-    var f1 = $("#sobstv").val();
-    var f2 = $("#typetc").val();
-    var f3 = $("#mesto").val();
-    var f4 = $("#mosch").val();
-    var f5 = $("#minage").val();
-    var f6 = $("#minexp").val();
-    var f7 = $("#peruse").val();
-    var f8 = $("#disc").val();
-    var f10 = f1 +'/'+ f2 +'/' +f3+'/'+ f4+'/'+f5+'/'+f6+'/'+f7+'/'+f8
-    alert(f10);
-  });
+    var f9 = $("#namecar").val();
+    var f11 = $("#vin").val();
+    var f12 = $("#regnum").val();
+    var f13 = $("#numdoc").val();
+    var f14 = $("#typedoc").val();
+    var f15 = $("#result3").html();
+
+    window.location = 'http://127.0.0.1:8000/ddd/'+f9 +'/'+f11 +'/'+ f12 +'/'+ f13 +'/'+ f14+'/'+ f15+'/'+1;
+  });  
+});
+</script>
+<script>
+$(document).ready(function(){
   $("b1").click(function(){
-    var f1 = $("#sobstv").val();
-    var f2 = $("#typetc").val();
-    var f3 = $("#mesto").val();
-    var f4 = $("#mosch").val();
-    var f5 = $("#minage").val();
-    var f6 = $("#minexp").val();
-    var f7 = $("#peruse").val();
-    var f8 = $("#disc").val();
-    var f9 = 1
-    var f11 = $("#result5").val()
-    var f10 = f1 +'/'+ f2 +'/' +f3+'/'+ f4+'/'+f5+'/'+f6+'/'+f7+'/'+f8 + '/' + f9+'/' +f11
-    alert(f10);
-  });
+    var f9 = $("#namecar").val();
+    var f11 = $("#vin").val();
+    var f12 = $("#regnum").val();
+    var f13 = $("#numdoc").val();
+    var f14 = $("#typedoc").val();
+    var f16 = $("#result2").html();
+
+    window.location = 'http://127.0.0.1:8000/ddd/'+f9 +'/'+f11 +'/'+ f12 +'/'+ f13 +'/'+ f14+'/'+ f16 +'/'+4;
+  });  
+});
+</script>
+<script>
+$(document).ready(function(){
   $("b2").click(function(){
-    var f1 = $("#sobstv").val();
-    var f2 = $("#typetc").val();
-    var f3 = $("#mesto").val();
-    var f4 = $("#mosch").val();
-    var f5 = $("#minage").val();
-    var f6 = $("#minexp").val();
-    var f7 = $("#peruse").val();
-    var f8 = $("#disc").val();
-    var f10 = f1 +'/'+ f2 +'/' +f3+'/'+ f4+'/'+f5+'/'+f6+'/'+f7+'/'+f8
-    alert(f10);
-  });
-  $("b").click(function(){
-    var f1 = $("#sobstv").val();
-    var f2 = $("#typetc").val();
-    var f3 = $("#mesto").val();
-    var f4 = $("#mosch").val();
-    var f5 = $("#minage").val();
-    var f6 = $("#minexp").val();
-    var f7 = $("#peruse").val();
-    var f8 = $("#disc").val();
-    var f10 = f1 +'/'+ f2 +'/' +f3+'/'+ f4+'/'+f5+'/'+f6+'/'+f7+'/'+f8
-    alert(f10);
-  });
+    var f9 = $("#namecar").val();
+    var f11 = $("#vin").val();
+    var f12 = $("#regnum").val();
+    var f13 = $("#numdoc").val();
+    var f14 = $("#typedoc").val();
+    var f17 = $("#result3").html();
+
+    window.location = 'http://127.0.0.1:8000/ddd/'+f9 +'/'+f11 +'/'+ f12 +'/'+ f13 +'/'+ f14+'/'+ f17 +'/'+ 2;
+  });  
+});
+</script>
+<script>
+$(document).ready(function(){
   $("b3").click(function(){
-    var f1 = $("#sobstv").val();
-    var f2 = $("#typetc").val();
-    var f3 = $("#mesto").val();
-    var f4 = $("#mosch").val();
-    var f5 = $("#minage").val();
-    var f6 = $("#minexp").val();
-    var f7 = $("#peruse").val();
-    var f8 = $("#disc").val();
-    var f10 = f1 +'/'+ f2 +'/' +f3+'/'+ f4+'/'+f5+'/'+f6+'/'+f7+'/'+f8
-    alert(f10);
-  });
+    var f9 = $("#namecar").val();
+    var f11 = $("#vin").val();
+    var f12 = $("#regnum").val();
+    var f13 = $("#numdoc").val();
+    var f14 = $("#typedoc").val();
+    var f18 = $("#result4").html();
+
+    window.location = 'http://127.0.0.1:8000/ddd/'+f9 +'/'+f11 +'/'+ f12 +'/'+ f13 +'/'+ f14+'/'+ f18 +'/'+ 2;
+  });  
+});
+</script>
+<script>
+$(document).ready(function(){
   $("b4").click(function(){
-    var f1 = $("#sobstv").val();
-    var f2 = $("#typetc").val();
-    var f3 = $("#mesto").val();
-    var f4 = $("#mosch").val();
-    var f5 = $("#minage").val();
-    var f6 = $("#minexp").val();
-    var f7 = $("#peruse").val();
-    var f8 = $("#disc").val();
-    var f10 = f1 +'/'+ f2 +'/' +f3+'/'+ f4+'/'+f5+'/'+f6+'/'+f7+'/'+f8
-    alert(f10);
-  });    
+    var f9 = $("#namecar").val();
+    var f11 = $("#vin").val();
+    var f12 = $("#regnum").val();
+    var f13 = $("#numdoc").val();
+    var f14 = $("#typedoc").val();
+    var f19 = $("#result5").html();
+
+    window.location = 'http://127.0.0.1:8000/ddd/'+f9 +'/'+f11 +'/'+ f12 +'/'+ f13 +'/'+ f14+'/'+ f19 +'/'+ 3;
+  });  
 });
 </script>
 
@@ -557,15 +574,13 @@ function re_count(){
 	koeff['Лет безаварийной езды']=[]
 	koeff['Лет безаварийной езды']['1']=1
 	koeff['Лет безаварийной езды']['2']=0.95
-	koeff['Лет безаварийной езды']['3']=0.9
-	koeff['Лет безаварийной езды']['4']=0.85
-	koeff['Лет безаварийной езды']['5']=0.8
-	koeff['Лет безаварийной езды']['6']=0.75
-	koeff['Лет безаварийной езды']['7']=0.7
-	koeff['Лет безаварийной езды']['8']=0.65
-	koeff['Лет безаварийной езды']['9']=0.6
-	koeff['Лет безаварийной езды']['10']=0.55
-	koeff['Лет безаварийной езды']['11']=0.5
+	koeff['Лет безаварийной езды']['3']=0.8
+	koeff['Лет безаварийной езды']['4']=0.75
+	koeff['Лет безаварийной езды']['5']=0.7
+	koeff['Лет безаварийной езды']['6']=0.65
+	koeff['Лет безаварийной езды']['7']=0.6
+	koeff['Лет безаварийной езды']['8']=0.55
+	koeff['Лет безаварийной езды']['9']=0.5
 
 	msg=''
 	for(var i=3;i<=9;i++){
@@ -580,7 +595,7 @@ function re_count(){
 	
 	if(sum2==0){
 		document.getElementById('result').innerHTML=Math.round((sum*100)/100)
-                document.getElementById('result1').innerHTML=Math.round((sum*100)/100)
+                document.getElementById('result1').innerHTML=Math.round((sum*90)/100)
                 document.getElementById('result2').innerHTML=Math.round((sum*100)/100)
                 document.getElementById('result3').innerHTML=Math.round((sum*115)/100)
                 document.getElementById('result4').innerHTML=Math.round((sum*101)/100)
@@ -588,7 +603,7 @@ function re_count(){
                 document.getElementById('result6').innerHTML=Math.round((sum*109)/100)
 	}else{
 		document.getElementById('result').innerHTML=(Math.round((sum*100)/100))
-                document.getElementById('result1').innerHTML=(Math.round((sum*100)/100))
+                document.getElementById('result1').innerHTML=(Math.round((sum*90)/100))
                 document.getElementById('result2').innerHTML=(Math.round((sum*100)/100))
                 document.getElementById('result3').innerHTML=(Math.round((sum*115)/100))
                 document.getElementById('result4').innerHTML=(Math.round((sum*101)/100))
@@ -655,8 +670,8 @@ setInterval('re_count()', 30)
 <!-------------------------------------------------------------------------------------------------------------------------------------------->
       <div class="row featurette">
         <div class="col-md-6 col-md-push-5">
-          <h2 class="featurette-heading">Выбирать<span class="text-muted">Лучшее</span></h2>
-          <p class="lead">Выберите лучшее предложение прямо сейчас!</p>
+          <h2 class="featurette-heading">ШАГ3.<span class="text-muted">Выбрать компанию</span></h2>
+          <p class="lead"> <a name = "choose">Выберите лучшее предложение прямо сейчас!</a></p>
         </div>
         <div class="col-md-3 col-md-pull-5">
           <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="/static/img/18.jpg" alt="Generic placeholder image">
@@ -678,7 +693,7 @@ setInterval('re_count()', 30)
                 <div class="db-wrapper">
                     <div class="db-pricing-eleven db-bk-color-one">
                         <div class="price">
-                            <sup>P</sup><td><span id="result3"></span></td>
+                            <sup>P</sup><td><span id="result2"></span></td>
                                 <small>год</small>
 <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
     <input id="id_business" name="business" type="hidden" value="alexbuldyaev-facilitator@gmail.com" /><input id="id_amount" name="amount" type="hidden" value="100.00" /><input id="id_item_name" name="item_name" type="hidden" value="products in EINC" /><input id="id_notify_url" name="notify_url" type="hidden" value="/paypal/" /><input id="id_cancel_return" name="cancel_return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/cart/" /><input id="id_return_url" name="return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/success/" /><input id="id_custom" name="custom" type="hidden" value="2" /><input id="id_invoice" name="invoice" type="hidden" value="INV-00001" /><input id="id_cmd" name="cmd" type="hidden" value="_xclick" /><input id="id_charset" name="charset" type="hidden" value="utf-8" /><input id="id_currency_code" name="currency_code" type="hidden" value="RUB" /><input id="id_no_shipping" name="no_shipping" type="hidden" value="1" />
@@ -694,9 +709,19 @@ setInterval('re_count()', 30)
                             <li><i class="glyphicon glyphicon-print"></i>Покрытие А </li>
 
                         </ul>
-                        <div id = 'b1' class="pricing-footer">
+                        <div class="pricing-footer">
 
-                            <a  class="btn db-button-color-square btn-lg">Выбрать компанию</a>
+                                                                                <td>
+  			     <button type="button" id = "b1" class="btn btn-primary"></button>
+
+			     </a>
+                             </td>
+ 
+                                  </tr>
+                                  <tr><td class="nameHr" colspan=2></td></tr>
+                                  <tr>
+                                    <td class="nameLabel"></td>
+                                    <td><b1>ВЫБРАТЬ КОМПАНИЮ</b1></td>
                         </div>
                     </div>
                 </div>
@@ -705,7 +730,7 @@ setInterval('re_count()', 30)
                   <div class="db-wrapper">
                 <div class="db-pricing-eleven db-bk-color-two popular">
                     <div class="price">
-                        <sup>P</sup><td><span id="result4"></span></td>
+                        <sup>P</sup><td><span id="result3"></span></td>
                                 <small>год</small>
 <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
     <input id="id_business" name="business" type="hidden" value="alexbuldyaev-facilitator@gmail.com" /><input id="id_amount" name="amount" type="hidden" value="100.00" /><input id="id_item_name" name="item_name" type="hidden" value="products in EINC" /><input id="id_notify_url" name="notify_url" type="hidden" value="/paypal/" /><input id="id_cancel_return" name="cancel_return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/cart/" /><input id="id_return_url" name="return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/success/" /><input id="id_custom" name="custom" type="hidden" value="2" /><input id="id_invoice" name="invoice" type="hidden" value="INV-00001" /><input id="id_cmd" name="cmd" type="hidden" value="_xclick" /><input id="id_charset" name="charset" type="hidden" value="utf-8" /><input id="id_currency_code" name="currency_code" type="hidden" value="RUB" /><input id="id_no_shipping" name="no_shipping" type="hidden" value="1" />
@@ -722,7 +747,17 @@ setInterval('re_count()', 30)
                         <li><i class="glyphicon glyphicon-trash"></i>Покрытие Б</li>
                     </ul>
                     <div class="pricing-footer">
-                        <a href="#" id = 'b2' class="btn db-button-color-square btn-lg">Выбрать компанию</a>
+                                                                            <td>
+  			     <button type="button" id = "b2" class="btn btn-primary"></button>
+
+			     </a>
+                             </td>
+ 
+                                  </tr>
+                                  <tr><td class="nameHr" colspan=2></td></tr>
+                                  <tr>
+                                    <td class="nameLabel"></td>
+                                    <td><b2>ВЫБРАТЬ КОМПАНИЮ</b2></td>
                     </div>
                 </div>
                       </div>
@@ -733,7 +768,7 @@ setInterval('re_count()', 30)
                     <div class="price">
       
                                   
-                <sup>P</sup><span id = "result5"></span>
+                <sup>P</sup><span id = "result4"></span>
                                 <small>год</small>
 <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
     <input id="id_business" name="business" type="hidden" value="alexbuldyaev-facilitator@gmail.com" /><input id="id_amount" name="amount" type="hidden" value="100.00" /><input id="id_item_name" name="item_name" type="hidden" value="products in EINC" /><input id="id_notify_url" name="notify_url" type="hidden" value="/paypal/" /><input id="id_cancel_return" name="cancel_return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/cart/" /><input id="id_return_url" name="return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/success/" /><input id="id_custom" name="custom" type="hidden" value="2" /><input id="id_invoice" name="invoice" type="hidden" value="INV-00001" /><input id="id_cmd" name="cmd" type="hidden" value="_xclick" /><input id="id_charset" name="charset" type="hidden" value="utf-8" /><input id="id_currency_code" name="currency_code" type="hidden" value="RUB" /><input id="id_no_shipping" name="no_shipping" type="hidden" value="1" />
@@ -753,7 +788,17 @@ setInterval('re_count()', 30)
 
                     <div class="pricing-footer">
 
-                        <a href="#" id = 'b3' class="btn db-button-color-square btn-lg">Выбрать компанию</a>
+                                                                            <td>
+  			     <button type="button" id = "b3" class="btn btn-primary"></button>
+
+			     </a>
+                             </td>
+ 
+                                  </tr>
+                                  <tr><td class="nameHr" colspan=2></td></tr>
+                                  <tr>
+                                    <td class="nameLabel"></td>
+                                    <td><b3>ВЫБРАТЬ КОМПАНИЮ</b3></td>
                     </div>
                 </div>
                       </div>
@@ -762,7 +807,7 @@ setInterval('re_count()', 30)
                   <div class="db-wrapper">
                 <div class="db-pricing-eleven db-bk-color-six">
                     <div class="price">
-                        <sup>P</sup> <span id="result6"></span>
+                        <sup>P</sup> <span id="result5"></span>
                                 <small>год</small>
                         <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
     <input id="id_business" name="business" type="hidden" value="alexbuldyaev-facilitator@gmail.com" /><input id="id_amount" name="amount" type="hidden" value="100.00" /><input id="id_item_name" name="item_name" type="hidden" value="products in EINC" /><input id="id_notify_url" name="notify_url" type="hidden" value="/paypal/" /><input id="id_cancel_return" name="cancel_return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/cart/" /><input id="id_return_url" name="return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/success/" /><input id="id_custom" name="custom" type="hidden" value="2" /><input id="id_invoice" name="invoice" type="hidden" value="INV-00001" /><input id="id_cmd" name="cmd" type="hidden" value="_xclick" /><input id="id_charset" name="charset" type="hidden" value="utf-8" /><input id="id_currency_code" name="currency_code" type="hidden" value="RUB" /><input id="id_no_shipping" name="no_shipping" type="hidden" value="1" />
@@ -780,7 +825,17 @@ setInterval('re_count()', 30)
                     </ul>
                     <div class="pricing-footer">
 
-                        <a href="/count/"+"m" id = 'b4' class="btn db-button-color-square btn-lg">Выбрать компанию</a>
+                                                    <td>
+  			     <button type="button" id = "b4" class="btn btn-primary"></button>
+
+			     </a>
+                             </td>
+ 
+                                  </tr>
+                                  <tr><td class="nameHr" colspan=2></td></tr>
+                                  <tr>
+                                    <td class="nameLabel"></td>
+                                    <td><b4>ВЫБРАТЬ КОМПАНИЮ</b4></td>
                     </div>
                 </div>
                       </div>

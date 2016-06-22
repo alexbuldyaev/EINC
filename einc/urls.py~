@@ -4,6 +4,8 @@ from einc import views
 
 
 urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+    url(r'^count/(?P<namecar>\w{0,50})/(P<vin>\w{0,20})/(P<regnum>\w{0,10})/(P<docnum>\w{0,10})/(P<doctype>\w{0,5})/(P<sum>\w{0,5})/$', views.make_mod, name='make_mod'),
     url(r'^$', views.post_list, name='post_list'),
     url(r'^countosg/', views.post_count, name='post_count'),
     url(r'^countksk/', views.post_countksk, name='post_countksk'),
