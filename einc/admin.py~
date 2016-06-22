@@ -13,8 +13,8 @@ admin.site.register(Driver, showname)
 admin.site.register(Usercli)
 admin.site.register(PolicyType, showname)
 admin.site.register(Status, showname)
-admin.site.register(PolicyCar, showname)
-admin.site.register(PolicyHome, showname)
+admin.site.register(PolicyCar)
+admin.site.register(PolicyHome)
 admin.site.register(Order)
 
 

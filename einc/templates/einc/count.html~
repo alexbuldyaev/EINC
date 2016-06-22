@@ -8,7 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="/static/img/favicon.ico">
 
     <title>E-INC insurance</title>
 
@@ -29,6 +29,7 @@
     <!-- Custom styles for this template -->
     <link  rel="stylesheet" href="{%static 'css/carusel.css' %}" type = 'text/css'/>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link  rel="stylesheet" href="{%static 'css/show.css' %}" type = 'text/css'/>
 
 
 
@@ -36,7 +37,7 @@
   </head>
 <!--NAVBAR
 ================================================== -->
-  <body>
+<body>
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -120,7 +121,7 @@ required_inputs_or=[]
 	<td>
 	&nbsp;
 	</td>
-	<td><div class="select_border"><select class="form_select" name="Собственник"><option value="">&ndash;</option>
+	<td><div class="select_border"><select class="form_select" id ="a11" name="Собственник"><option value="">&ndash;</option>
 <option value="физическое">Физическое лицо</option>
 <option value="юридическое">Юридическое лицо</option>
 </select></div><input name="Собственник_neogr" type="text" value="неограничен" disabled style="display: none; border: none" />
@@ -135,7 +136,7 @@ required_inputs_or=[]
 	<td>
 	&nbsp;
 	</td>
-	<td><div class="select_border"><select class="form_select" name="Тип"><option value="">&ndash;</option>
+	<td><div class="select_border"><select class="form_select" id ="a10" name="Тип"><option value="">&ndash;</option>
 <option value="легковое">Легковое</option>
 <option value="такси">Такси</option>
 <option value="грузовое&lt;=16">Грузовое с разрешенной максимальной массой 16 тонн и менее</option>
@@ -153,7 +154,7 @@ required_inputs_or=[]
 	<td>
 	&nbsp;
 	</td>
-	<td><div class="select_border"><select class="form_select" name="Место регистрации"><option value="">&ndash;</option>
+	<td><div class="select_border"><select class="form_select" id ="a1" name="Место регистрации"><option value="">&ndash;</option>
 <option value="Москва">Москва</option>
 <option value="Московская область">Московская область</option>
 <option value="Санкт-Петербург">Санкт-Петербург</option>
@@ -465,7 +466,7 @@ required_inputs_or=[]
 	<td>
 	&nbsp;
 	</td>
-	<td><div class="select_border"><select class="form_select" name="Список допущенных водителей"><option value="">&ndash;</option>
+	<td><div class="select_border"><select class="form_select" id ="a2" name="Список допущенных водителей"><option value="">&ndash;</option>
 <option value="ограниченный">ограниченный</option>
 <option value="неограниченный">неограниченный</option>
 </select></div><input name="Список допущенных водителей_neogr" type="text" value="неограничен" disabled style="display: none; border: none" />
@@ -495,7 +496,7 @@ required_inputs_or=[]
 	<td>
 	&nbsp;
 	</td>
-	<td><div class="select_border"><select class="form_select" name="Минимальный стаж"><option value="">&ndash;</option>
+	<td><div class="select_border"><select class="form_select" id ="a3" name="Минимальный стаж"><option value="">&ndash;</option>
 <option value="до 3 лет включительно">до 3 лет включительно</option>
 <option value="свыше 3 лет">свыше 3 лет</option>
 </select></div><input name="Минимальный стаж_neogr" type="text" value="неограничен" disabled style="display: none; border: none" />
@@ -510,7 +511,7 @@ required_inputs_or=[]
 	<td>
 	&nbsp;
 	</td>
-	<td><div class="select_border"><select class="form_select" name="Период использования"><option value="">&ndash;</option>
+	<td><div class="select_border"><select class="form_select" id ="a4" name="Период использования"><option value="">&ndash;</option>
 <option value="10 месяцев и более">10 месяцев и более</option>
 </select></div><input name="Период использования_neogr" type="text" value="неограничен" disabled style="display: none; border: none" />
 		</td>
@@ -525,7 +526,7 @@ required_inputs_or=[]
 	<td>
 	&nbsp;
 	</td>
-	<td><div class="select_border"><select class="form_select" name="Лет безаварийной езды"><option value="">&ndash;</option>
+	<td><div class="select_border"><select class="form_select" id ="a5" name="Лет безаварийной езды"><option value="">&ndash;</option>
 <option value="это первый договор">это первый договор</option>
 <option value="1 год">1 год</option>
 <option value="2 года">2 года</option>
@@ -544,6 +545,7 @@ required_inputs_or=[]
 </table>
 </form>
 
+
 <table>            
 
                              <tr>
@@ -551,7 +553,7 @@ required_inputs_or=[]
                              </td>
 					
                              <td class="bottom">
-                             <input class="btn btn-primary" type="submit" value="Рассчитать" name="calculation">  
+                             <input class="btn btn-primary" type="submit" id = "b" value="Рассчитать" name="calculation">  
                              </td>
                              <td>
                              <a href = "/bepay">
@@ -570,7 +572,8 @@ required_inputs_or=[]
                                   </tr>
                                   <tr>
                                     <td class="nameLabel"><b>ОСАГО &nbsp;&nbsp;</b></td>
-                                    <td>Итого: <span id="result">2070</span></td>
+                                    <td>Итого: <span id="result"></span></td>
+                                    <td>Итого: <span id="result1"></span></td>
                                   </tr>
 			           
 <input type="button" id="btnCookie" value="Выбрать компанию" />
@@ -625,19 +628,24 @@ $(document).ready(function() {
 <!-------------------------------------------------------------------------------------------------------------------------------------------->
 <script>
 $(document).ready(function(){
-  $( "button.add" ).click(function(){
-    var current_button = $(this);
-    $.ajax({
-        url: "/add-to-cart/",
-        type: "GET",
-        data: "result1",
-        success: function(data){
-          current_button.replaceWith(data);
-        }
-    });
-   });
+  var a = $("#a4").val();
+  $("b").click(function(){
+    var f1 = $("#a4").val();
+    var f2 = $("#a3").val();
+    var f3 = $("#a2").val();
+    var f4 = $("#a1").val();
+    var f5 = $("#a10").val();
+    var f6 = $("#a11").val();
+    var f7 = $("#a5").val();
+    var f10 = f1 +'/'+ f2 +'/' +f3+'/'+ f4+'/'+f5+'/'+f6+'/'+f7+'/'+sum
+    alert(f10);
+  });
+  alert(a); 
+    
 });
 </script>
+
+
 					
 <script>
 var fields=[];
@@ -1058,12 +1066,18 @@ function re_count(){
 		document.getElementById('result').innerHTML=Math.round(sum*100)/100
                 document.getElementById('result1').innerHTML=Math.round(sum*100)/100
                 document.getElementById('result2').innerHTML=Math.round(sum*100)/100
-                document.getElementById('result3').innerHTML=Math.round(sum*100)/100
+                document.getElementById('result3').innerHTML=Math.round(sum*115)/100
+                document.getElementById('result4').innerHTML=Math.round(sum*101)/100
+                document.getElementById('result5').innerHTML=Math.round(sum*99)/100
+                document.getElementById('result6').innerHTML=Math.round(sum*109)/100
 	}else{
 		document.getElementById('result').innerHTML=(Math.round(sum*100)/100)+' &minus; '+(Math.round(sum2*100)/100)
                 document.getElementById('result1').innerHTML=(Math.round(sum*100)/100)+' &minus; '+(Math.round(sum2*100)/100)
                 document.getElementById('result2').innerHTML=(Math.round(sum*100)/100)+' &minus; '+(Math.round(sum2*100)/100)
-                document.getElementById('result3').innerHTML=(Math.round(sum*100)/100)+' &minus; '+(Math.round(sum2*100)/100)
+                document.getElementById('result3').innerHTML=(Math.round(sum*115)/100)+' &minus; '+(Math.round(sum2*100)/100)
+                document.getElementById('result4').innerHTML=(Math.round(sum*101)/100)+' &minus; '+(Math.round(sum2*100)/100)
+                document.getElementById('result5').innerHTML=(Math.round(sum*99)/100)+' &minus; '+(Math.round(sum2*100)/100)
+                document.getElementById('result6').innerHTML=(Math.round(sum*109)/100)+' &minus; '+(Math.round(sum2*100)/100)
 	}
         var elem=document.getElementById('result');
 
@@ -1120,6 +1134,149 @@ setInterval('re_count()', 30)
 </script>
 
 
+
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------------------------------------------------------------------------------------------------->
+      <div class="row featurette">
+        <div class="col-md-6 col-md-push-5">
+          <h2 class="featurette-heading">Выбирать<span class="text-muted">Лучшее</span></h2>
+          <p class="lead">Выберите лучшее предложение прямо сейчас!</p>
+        </div>
+        <div class="col-md-3 col-md-pull-5">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="/static/img/18.jpg" alt="Generic placeholder image">
+        </div>
+      </div>
+<div class="container">
+   <div class="row text-center">
+            <div class="col-md-12">
+
+            
+
+            <br/><br/>
+            </div>
+    </div> 
+<!---------------------------------------------------------------------------------------------------------------------------------------->       
+           
+  <div class="row db-padding-btm db-attached">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <div class="db-wrapper">
+                    <div class="db-pricing-eleven db-bk-color-one">
+                        <div class="price">
+                            <sup>P</sup><td><span id="result3"></span></td>
+                                <small>год</small>
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+    <input id="id_business" name="business" type="hidden" value="alexbuldyaev-facilitator@gmail.com" /><input id="id_amount" name="amount" type="hidden" value="100.00" /><input id="id_item_name" name="item_name" type="hidden" value="products in EINC" /><input id="id_notify_url" name="notify_url" type="hidden" value="/paypal/" /><input id="id_cancel_return" name="cancel_return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/cart/" /><input id="id_return_url" name="return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/success/" /><input id="id_custom" name="custom" type="hidden" value="2" /><input id="id_invoice" name="invoice" type="hidden" value="INV-00001" /><input id="id_cmd" name="cmd" type="hidden" value="_xclick" /><input id="id_charset" name="charset" type="hidden" value="utf-8" /><input id="id_currency_code" name="currency_code" type="hidden" value="RUB" /><input id="id_no_shipping" name="no_shipping" type="hidden" value="1" />
+    <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="Buy it Now" />
+</form>
+
+                        </div>
+                        <div class="type">
+				<img src = "/static/img/01.jpg" width="200" height="150">
+                        </div>
+                        <ul>
+
+                            <li><i class="glyphicon glyphicon-print"></i>Покрытие А </li>
+
+                        </ul>
+                        <div class="pricing-footer">
+
+                            <a href="/" class="btn db-button-color-square btn-lg">Выбрать компанию</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                  <div class="db-wrapper">
+                <div class="db-pricing-eleven db-bk-color-two popular">
+                    <div class="price">
+                        <sup>P</sup><td><span id="result4"></span></td>
+                                <small>год</small>
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+    <input id="id_business" name="business" type="hidden" value="alexbuldyaev-facilitator@gmail.com" /><input id="id_amount" name="amount" type="hidden" value="100.00" /><input id="id_item_name" name="item_name" type="hidden" value="products in EINC" /><input id="id_notify_url" name="notify_url" type="hidden" value="/paypal/" /><input id="id_cancel_return" name="cancel_return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/cart/" /><input id="id_return_url" name="return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/success/" /><input id="id_custom" name="custom" type="hidden" value="2" /><input id="id_invoice" name="invoice" type="hidden" value="INV-00001" /><input id="id_cmd" name="cmd" type="hidden" value="_xclick" /><input id="id_charset" name="charset" type="hidden" value="utf-8" /><input id="id_currency_code" name="currency_code" type="hidden" value="RUB" /><input id="id_no_shipping" name="no_shipping" type="hidden" value="1" />
+    <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="Buy it Now" />
+</form>
+                    </div>
+                    <div class="type">
+                        <img src = "/static/img/02.jpg" width="200" height="150">
+                    </div>
+                    <ul>
+
+                        <li><i class="glyphicon glyphicon-print"></i>Покрытие А </li>
+                        <li><i class="glyphicon glyphicon-time"></i>Опция Б </li>
+                        <li><i class="glyphicon glyphicon-trash"></i>Покрытие Б</li>
+                    </ul>
+                    <div class="pricing-footer">
+                        url1 = '127.0.0.1:8000/countosg/' + result4 +'/'+' 
+                        <a href="#" class="btn db-button-color-square btn-lg">Выбрать компанию</a>
+                    </div>
+                </div>
+                      </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                  <div class="db-wrapper">
+                <div class="db-pricing-eleven db-bk-color-three">
+                    <div class="price">
+      
+                                  
+                <sup>P</sup><span id = "result5"></span>
+                                <small>год</small>
+<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+    <input id="id_business" name="business" type="hidden" value="alexbuldyaev-facilitator@gmail.com" /><input id="id_amount" name="amount" type="hidden" value="100.00" /><input id="id_item_name" name="item_name" type="hidden" value="products in EINC" /><input id="id_notify_url" name="notify_url" type="hidden" value="/paypal/" /><input id="id_cancel_return" name="cancel_return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/cart/" /><input id="id_return_url" name="return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/success/" /><input id="id_custom" name="custom" type="hidden" value="2" /><input id="id_invoice" name="invoice" type="hidden" value="INV-00001" /><input id="id_cmd" name="cmd" type="hidden" value="_xclick" /><input id="id_charset" name="charset" type="hidden" value="utf-8" /><input id="id_currency_code" name="currency_code" type="hidden" value="RUB" /><input id="id_no_shipping" name="no_shipping" type="hidden" value="1" />
+    <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="Buy it Now" />
+</form>
+                    </div>
+                    <div class="type">
+                        <img src = "/static/img/03.jpg" width="200" height="150">
+                    </div>
+                    <ul>
+
+                        <li><i class="glyphicon glyphicon-print"></i>Покрытие А </li>
+                        <li><i class="glyphicon glyphicon-time"></i>Сервис Б</li>
+                        <li><i class="glyphicon glyphicon-trash"></i>Уход С</li>
+                    </ul>
+
+
+                    <div class="pricing-footer">
+
+                        <a href="#" class="btn db-button-color-square btn-lg">Выбрать компанию</a>
+                    </div>
+                </div>
+                      </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                  <div class="db-wrapper">
+                <div class="db-pricing-eleven db-bk-color-six">
+                    <div class="price">
+                        <sup>P</sup> <span id="result6"></span>
+                                <small>год</small>
+                        <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+    <input id="id_business" name="business" type="hidden" value="alexbuldyaev-facilitator@gmail.com" /><input id="id_amount" name="amount" type="hidden" value="100.00" /><input id="id_item_name" name="item_name" type="hidden" value="products in EINC" /><input id="id_notify_url" name="notify_url" type="hidden" value="/paypal/" /><input id="id_cancel_return" name="cancel_return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/cart/" /><input id="id_return_url" name="return" type="hidden" value="http://alexbu.pythonanywhere.com/payment/success/" /><input id="id_custom" name="custom" type="hidden" value="2" /><input id="id_invoice" name="invoice" type="hidden" value="INV-00001" /><input id="id_cmd" name="cmd" type="hidden" value="_xclick" /><input id="id_charset" name="charset" type="hidden" value="utf-8" /><input id="id_currency_code" name="currency_code" type="hidden" value="RUB" /><input id="id_no_shipping" name="no_shipping" type="hidden" value="1" />
+    <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="Buy it Now" />
+</form>
+                    </div>
+                    <div class="type">
+                        <img src = "/static/img/04.jpg" width="200" height="150">
+                    </div>
+                    <ul>
+
+                        <li><i class="glyphicon glyphicon-print"></i>АВАРКОМ </li>
+                        <li><i class="glyphicon glyphicon-time"></i>Делюкс покрытие</li>
+
+                    </ul>
+                    <div class="pricing-footer">
+
+                        <a href="/count/"+"m" class="btn db-button-color-square btn-lg">Выбрать компанию</a>
+                    </div>
+                </div>
+                      </div>
+            </div>
+        </div>
+        
+
+    </div>
+      <hr class="featurette-divider">
+
+</body> 
 
 <!-------------------------------------------------------------------------------------------------------------------------------------------->
 

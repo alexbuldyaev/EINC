@@ -5,6 +5,8 @@ from django.contrib.auth.models import User
 class InsComp(models.Model):
     CompName = models.CharField(max_length=200)
     CompCont = models.CharField(max_length=200)
+    def __str__(self):
+        return '%s' % (self.CompName)
 
 class CalcRul(models.Model):
     CompID = models.ForeignKey(InsComp)
@@ -20,6 +22,8 @@ class Insured(models.Model):
     AddressRegistr = models.CharField(max_length=100)
     PasspNumb = models.IntegerField()
     PasspDate = models.DateField()
+    def __str__(self):
+        return '%s' % (self.Name)
 
 class Owner(models.Model):
     Name = models.CharField(max_length=50)
@@ -29,6 +33,8 @@ class Owner(models.Model):
     AddressRegistr = models.CharField(max_length=100)
     PasspNumb = models.IntegerField()
     PasspDate = models.DateField()
+    def __str__(self):
+        return '%s' % (self.Name)
 
 class Driver(models.Model):
     Name = models.CharField(max_length=50)
@@ -39,6 +45,8 @@ class Driver(models.Model):
     DrLicNumb = models.IntegerField()
     DrLicDate = models.DateField()
     DrLicIfVal = models.BooleanField()
+    def __str__(self):
+        return '%s' % (self.Name)
 
 
 class Usercli(models.Model):
@@ -48,12 +56,22 @@ class Usercli(models.Model):
     OwnID = models.OneToOneField(Owner, on_delete = models.CASCADE, primary_key = False,)
     DriID = models.OneToOneField(Driver, on_delete = models.CASCADE, primary_key = False,)
 
+class PolicyType(models.Model):
+    TypeName = models.CharField(max_length=200)
+    def __str__(self):
+        return '%s' % (self.TypeName)   
+
+class Status(models.Model):
+    StatName = models.CharField(max_length=200)
+    def __str__(self):
+        return '%s' % (self.StatName) 
+
 
 class PolicyCar(models.Model):
     PolicyID = models.IntegerField()
-    PolicyType = models.BooleanField()
+    PolicyType = models.ForeignKey(PolicyType)
     CompName = models.ForeignKey(InsComp)
-    Status = models.IntegerField()
+    Status = models.ForeignKey(Status)
     MonSum = models.IntegerField()
     CarName = models.CharField(max_length=20)
     CarDate = models.DateField()
@@ -66,12 +84,14 @@ class PolicyCar(models.Model):
     Owner = models.ForeignKey(Owner)
     Driver = models.ForeignKey(Driver)
     User = models.ForeignKey(Usercli)
+    def __str__(self):
+        return '%s' % (self.PolicyID) 
 
 class PolicyHome(models.Model):
     PolicyID = models.IntegerField()
-    PolicyType = models.BooleanField()
+    PolicyType = models.ForeignKey(PolicyType)
     CompName = models.ForeignKey(InsComp)
-    Status = models.CharField(max_length=20)
+    Status = models.ForeignKey(Status)
     MonSum = models.IntegerField()
     HomeName = models.CharField(max_length=20)
     HomeAddr = models.CharField(max_length=20)
@@ -81,6 +101,8 @@ class PolicyHome(models.Model):
     Insured = models.ForeignKey(Insured)
     Owner = models.ForeignKey(Owner)
     User = models.ForeignKey(Usercli)
+    def __str__(self):
+        return '%s' % (self.PolicyID) 
 
 
 

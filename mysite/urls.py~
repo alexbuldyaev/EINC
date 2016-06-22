@@ -18,4 +18,5 @@ urlpatterns = [
     
     url('', include(social.apps.django_app.urls, namespace='social')),
     url(r'^paypal/', include(paypal.standard.ipn.urls)),
+    url(r'^add-to-cart/$', views.add, name='add')
 ]
